@@ -3,6 +3,6 @@
     "formulahendry.auto-rename-tag",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "zixuanchen.vitest-explorer"
+    "vitest.explorer"
   ]
 }

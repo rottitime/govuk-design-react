@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 
+// const css =
+//   require('../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css').toString()
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -25,6 +28,13 @@ const config: StorybookConfig = {
     }
 
     return config
-  }
+  },
+  previewHead: (head) => `
+    ${head}
+    <link rel="stylesheet" href="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css">
+
+    
+    
+  `
 }
 export default config

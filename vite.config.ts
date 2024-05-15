@@ -3,14 +3,16 @@ import { resolve } from 'path'
 import react from '@vitejs/plugin-react-swc'
 import dts from 'vite-plugin-dts'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ include: ['lib'] })],
+  plugins: [react(), dts()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
-      formats: ['es'],
+      entry: resolve(__dirname, 'src/main.ts'),
+      name: '@rottitime/govuk-design-react',
+      fileName: (format) => `main.${format}.js`
     },
     copyPublicDir: false,
-  },
+    sourcemap: true,
+    emptyOutDir: true
+  }
 })

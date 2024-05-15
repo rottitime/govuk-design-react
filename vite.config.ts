@@ -14,13 +14,7 @@ export default defineConfig({
       fileName: (format) => `main.${format}.js`
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
-      }
+      external: ['react', 'react-dom']
     },
     sourcemap: true,
     emptyOutDir: true

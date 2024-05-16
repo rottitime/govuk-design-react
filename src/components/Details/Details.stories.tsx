@@ -4,7 +4,7 @@ import Details from './Details'
 const meta: Meta<typeof Details> = {
   title: 'Details',
   component: Details,
-  parameters: {},
+
   argTypes: {
     title: {
       control: 'text',

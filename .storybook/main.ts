@@ -31,10 +31,6 @@ const config: StorybookConfig = {
   },
   previewHead: (head) => `
     ${head}
-    <link rel="stylesheet" href="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css">
-
-    
-    
   `
 }
 export default config

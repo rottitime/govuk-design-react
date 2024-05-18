@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import react from '@vitejs/plugin-react-swc'
 import dts from 'vite-plugin-dts'
+import libCss from 'vite-plugin-libcss'
 
 export default defineConfig({
   resolve: {
@@ -12,7 +13,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts(), libCss()],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'main.ts'),
@@ -28,9 +29,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/setupTests.ts',
-    // you might want to disable it, if you don't have tests that rely on CSS
-    // since parsing CSS is slow
-    css: true
+    setupFiles: './src/setupTests.ts'
   }
 })

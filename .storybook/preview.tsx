@@ -1,14 +1,16 @@
 import type { Preview } from '@storybook/react'
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
-
-import 'govuk-frontend/dist/govuk/all.scss'
 import React from 'react'
+
+import CSSBaseline from '../src/components/CssBaseline/CssBaseline'
+// import 'govuk-frontend/dist/govuk/all.scss'  //using CSSBaseline instead
 
 const preview: Preview = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
       <div style={{ margin: '3em' }}>
+        <CSSBaseline />
         <Story />
       </div>
     )

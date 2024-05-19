@@ -1,5 +1,13 @@
 # React + TypeScript + Vite
 
+---
+
+## Links
+
+- gov Design system: https://design-system.service.gov.uk/styles/
+- Live example https://rottitime.github.io/govuk-design-react/?path=/story/details--primary
+- Terms and conditions for non Gov sites: https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -20,8 +28,8 @@ export default {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+    tsconfigRootDir: __dirname
+  }
 }
 ```
 

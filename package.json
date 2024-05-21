@@ -1,6 +1,6 @@
 {
   "name": "@rottitime/govuk-design-react",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "author": {
     "name": "RottiTime",
@@ -41,7 +41,8 @@
     "test:coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:build:preview": "http-server ./storybook-static"
+    "storybook:build:preview": "http-server ./storybook-static",
+    "changeset": "npx changeset"
   },
   "peerDependencies": {
     "govuk-frontend": "^5.3.1",

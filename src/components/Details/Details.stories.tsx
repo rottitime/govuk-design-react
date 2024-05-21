@@ -4,7 +4,13 @@ import Details from './Details'
 const meta: Meta<typeof Details> = {
   title: 'Details',
   component: Details,
-
+  parameters: {
+    docs: {
+      description: {
+        component: `A details component for user input. See https://design-system.service.gov.uk/components/details/ for more details.`
+      }
+    }
+  },
   argTypes: {
     title: {
       control: 'text',

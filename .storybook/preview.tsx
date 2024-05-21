@@ -9,7 +9,7 @@ const preview: Preview = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div style={{ margin: '3em' }}>
+      <div style={{ padding: '3em' }}>
         <CSSBaseline />
         <Story />
       </div>

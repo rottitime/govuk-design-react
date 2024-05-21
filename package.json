@@ -19,10 +19,21 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "govuk",
+    "design",
+    "react",
+    "frontend",
+    "design system",
+    "template",
+    "component",
+    "typescript",
+    "jsx"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "tsc && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",

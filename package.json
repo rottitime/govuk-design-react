@@ -49,7 +49,7 @@
     "storybook:build": "storybook build",
     "storybook:build:preview": "http-server ./storybook-static"
   },
-  "dependencies": {
+  "peerDependencies": {
     "govuk-frontend": "^5.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

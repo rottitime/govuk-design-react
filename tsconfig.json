@@ -16,7 +16,7 @@
     "noUncheckedIndexedAccess": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "typeRoots": ["./dist/main.d.ts"],
+    "typeRoots": ["./dist/main.d.ts", "./node_modules"],
     "declaration": true,
     "outDir": "dist",
 
@@ -31,7 +31,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "include": ["src", "main.ts"],
   "exclude": ["node_modules", "dist"],

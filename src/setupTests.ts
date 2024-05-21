@@ -1,4 +1,5 @@
-import '@testing-library/jest-dom'
+// import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 
 /*
 snippet if need to use fetchMock later

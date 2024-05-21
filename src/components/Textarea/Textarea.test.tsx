@@ -8,6 +8,7 @@ describe('Textarea', () => {
     render(<Textarea />)
     const textareaElement = screen.getByRole('textbox')
     expect(textareaElement).toBeInTheDocument()
+    expect(textareaElement).toHaveClass('govuk-textarea')
   })
 
   it('renders with custom class name', () => {
@@ -24,20 +25,15 @@ describe('Textarea', () => {
   })
 
   it('renders children', () => {
-    render(
-      <Textarea>
-        <span>Some content</span>
-      </Textarea>
-    )
-    const contentElement = screen.getByText('Some content')
-    expect(contentElement).toBeInTheDocument()
+    render(<Textarea>Some content</Textarea>)
+    expect(screen.getByRole('textbox')).toHaveValue('Some content')
   })
 
-  it('triggers onChange event', () => {
-    const handleChange = jest.fn()
+  it('triggers onChange event', async () => {
+    const handleChange = vi.fn()
     render(<Textarea onChange={handleChange} />)
     const textareaElement = screen.getByRole('textbox')
-    userEvent.type(textareaElement, 'Hello')
+    await userEvent.type(textareaElement, 'Hello')
     expect(handleChange).toHaveBeenCalledTimes(5) // Number of characters typed
   })
 })

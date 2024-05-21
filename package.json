@@ -2,6 +2,14 @@
   "name": "@rottitime/govuk-design-react",
   "private": true,
   "version": "0.0.1",
+  "author": {
+    "name": "RottiTime",
+    "email": "webmaster@jaspaul.com",
+    "url": "https://jaspaul.com/"
+  },
+  "repository": {
+    "url": "https://github.com/rottitime/govuk-design-react"
+  },
   "license": "MIT",
   "type": "module",
   "main": "dist/main.umd.js",

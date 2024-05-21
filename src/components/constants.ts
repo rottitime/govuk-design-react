@@ -1,4 +1,12 @@
-//UI Elements
+// UI Elements
+// Documentation: https://design-system.service.gov.uk/styles/
+
+export const sizes = {
+  small: 's',
+  medium: 'm',
+  large: 'l',
+  'extra-large': 'xl'
+} as const
 
 export const layout = {
   full: 'full',

@@ -14,13 +14,7 @@
   "type": "module",
   "main": "dist/main.umd.js",
   "module": "dist/main.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/main.es.js",
-      "require": "./dist/main.umd.js",
-      "types": "./dist/main.d.ts"
-    }
-  },
+  "types": "./dist/main.d.ts",
   "files": [
     "./dist"
   ],

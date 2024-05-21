@@ -1,4 +1,4 @@
-// UI Elements
+// UI constants for the design system
 // Documentation: https://design-system.service.gov.uk/styles/
 
 export const sizes = {
@@ -16,3 +16,16 @@ export const layout = {
   'one-third': 'one-third',
   'one-quarter': 'one-quarter'
 } as const
+
+export const statusColors = {
+  grey: 'grey',
+  green: 'green',
+  turquoise: 'turquoise',
+  blue: 'blue',
+  light: 'light',
+  purple: 'purple',
+  pink: 'pink',
+  red: 'red',
+  orange: 'orange',
+  yellow: 'yellow'
+}

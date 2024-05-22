@@ -8,8 +8,11 @@
     "url": "https://jaspaul.com/"
   },
   "repository": {
+    "type": "git",
     "url": "https://github.com/rottitime/govuk-design-react"
   },
+  "homepage": "https://github.com/rottitime/govuk-design-react#readme",
+  "bugs": "https://github.com/rottitime/govuk-design-react/issues",
   "license": "MIT",
   "type": "module",
   "main": "dist/main.umd.js",

@@ -1,4 +1,4 @@
-name: Linting CI
+name: Linting, Tests CI
 on:
   push:
     branches:
@@ -17,4 +17,4 @@ jobs:
           node-version: 20
 
       - run: npm ci
-      - run: npm run lint && pnpm run build
+      - run: npm run test:all

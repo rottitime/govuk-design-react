@@ -1,3 +1,5 @@
+import type { DateDigit } from '@/types'
+
 // UI constants for the design system
 // Documentation: https://design-system.service.gov.uk/styles/
 
@@ -29,3 +31,12 @@ export const statusColors = {
   orange: 'orange',
   yellow: 'yellow'
 }
+
+// Component specific
+type DateLabels = Record<DateDigit, string>
+
+export const labelsDate: DateLabels = {
+  dd: 'Day',
+  mm: 'Month',
+  yyyy: 'Year'
+} as const

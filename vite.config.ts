@@ -13,10 +13,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  plugins: [react(), dts(), libCss()],
+  plugins: [react(), dts({ include: ['lib'] }), libCss()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'main.ts'),
+      entry: path.resolve(__dirname, 'lib/main.ts'),
       name: '@rottitime/govuk-design-react',
       fileName: (format) => `main.${format}.js`
     },

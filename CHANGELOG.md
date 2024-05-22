@@ -1,5 +1,12 @@
 # @rottitime/govuk-design-react
 
+## 0.3.1
+
+### Patch Changes
+
+- c3f9905: further fixes to publish
+- c3f9905: workflow updates
+
 ## 0.3.0
 
 ### Minor Changes

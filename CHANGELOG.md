@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.3.2
+
+### Patch Changes
+
+- bf227f0: Fix for npmignore
+
 ## 0.3.1
 
 ### Patch Changes

@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: Setup Node.js 20
         uses: actions/setup-node@v3
@@ -29,6 +32,8 @@ jobs:
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
+        with:
+          publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

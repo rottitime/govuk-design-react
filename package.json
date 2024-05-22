@@ -43,7 +43,8 @@
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "storybook:build:preview": "http-server ./storybook-static",
-    "changeset": "npx changeset"
+    "changeset": "npx changeset",
+    "release": "npm run test:all && changeset publish"
   },
   "peerDependencies": {
     "govuk-frontend": "^5.3.1",

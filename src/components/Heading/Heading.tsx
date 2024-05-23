@@ -1,16 +1,22 @@
 import { sizes } from '@/const'
 import { insertIf } from '@/utils/array.utils'
-import type { HTMLAttributes } from 'react'
+import type { ComponentProps, HTMLAttributes } from 'react'
+import Caption from '../Caption/Caption'
 
 type Props = {
   level?: 1 | 2 | 3 | 4 | 5 | 6
   size?: keyof typeof sizes
+  caption?: string
+  captionSize?: ComponentProps<typeof Caption>['size']
 } & HTMLAttributes<HTMLHeadElement>
 
 export default function Heading({
   level = 1,
   size = 'large',
   className,
+  children,
+  caption,
+  captionSize,
   ...props
 }: Props) {
   const H = `h${level}`
@@ -20,5 +26,10 @@ export default function Heading({
       ' '
     )
   }
-  return <H {...tagProps} />
+  return (
+    <H {...tagProps}>
+      {caption && <Caption size={captionSize}>{caption}</Caption>}
+      {children}
+    </H>
+  )
 }

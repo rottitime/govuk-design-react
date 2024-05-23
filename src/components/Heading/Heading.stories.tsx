@@ -48,6 +48,15 @@ export const Primary: Story = {
 
 export const SingleHeading: Story = {
   args: {
-    children: 'govuk-heading'
+    ...Primary.args
+  }
+}
+
+export const WithCaption: Story = {
+  args: {
+    ...Primary.args,
+    children: 'Your details',
+    caption: 'Question 3 of 9',
+    captionSize: 'large'
   }
 }

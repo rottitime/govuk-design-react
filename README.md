@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://storybook.js.org/">
+  <a href="https://github.com/rottitime/govuk-design-react">
     <img src="https://rottitime.github.io/govuk-design-react/doc/logo.webp" alt="logo for React Govuk Design System " width="400" />
   </a>
 </p>

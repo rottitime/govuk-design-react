@@ -32,11 +32,21 @@ export const RightArrow = () => (
   </svg>
 )
 
-<Meta title="Configure your project" />
+{' '}
+
+<a href="https://github.com/rottitime/govuk-design-react">
+  <img
+    src="https://rottitime.github.io/govuk-design-react/doc/logo.webp"
+    alt="logo for React Govuk Design System "
+    width="400"
+  />
+</a>
+
+<Meta title="React Govuk Design System" />
 
 <div className="sb-container">
   <div className='sb-section-title'>
-    # Configure your project
+    # React Govuk Design System
 
     Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
 
@@ -47,39 +57,44 @@ export const RightArrow = () => (
         src={Styling}
         alt="A wall of logos representing different styling technologies"
       />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
-      <a
-        href="https://storybook.js.org/docs/react/configure/styling-and-css"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+      <h4 className="sb-section-item-heading">Time Savings</h4>
+      <p className="sb-section-item-paragraph">Powered by [GovUK Design System](https://design-system.service.gov.uk/), which goes through user testing, has the best accessibility, and is fully responsive.</p>
+      
     </div>
     <div className="sb-section-item">
       <img
         src={Context}
         alt="An abstraction representing the composition of data for a component"
       />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/react/writing-stories/decorators#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+      <h4 className="sb-section-item-heading">Accessibility</h4>
+      <p className="sb-section-item-paragraph">Components are designed to meet the highest accessibility standards, ensuring your application is usable by everyone.</p>
     </div>
     <div className="sb-section-item">
       <img src={Assets} alt="A representation of typography and image assets" />
       <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
+        <h4 className="sb-section-item-heading">Consistency</h4>
+        <p className="sb-section-item-paragraph">Maintain design consistency with the UK Government Design System across all your projects.</p>
         <a
           href="https://storybook.js.org/docs/react/configure/images-and-assets"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
     </div>
+
+     <div className="sb-section-item">
+      <img src={Assets} alt="A representation of typography and image assets" />
+      <div>
+        <h4 className="sb-section-item-heading">Customization</h4>
+        <p className="sb-section-item-paragraph">Easily customize components to fit your specific needs without compromising on design standards.</p>
+        <a
+          href="https://storybook.js.org/docs/react/configure/images-and-assets"
+          target="_blank"
+        >Learn more<RightArrow /></a>
+      </div>
+    </div>
+
   </div>
+
 </div>
 <div className="sb-container">
   <div className='sb-section-title'>
@@ -170,7 +185,7 @@ export const RightArrow = () => (
       <img src={Github} alt="Github logo" className="sb-explore-image"/>
       Join our contributors building the future of UI development.
       <a
-        href="https://github.com/storybookjs/storybook"
+        href="https://github.com/rottitime/govuk-design-react"
         target="_blank"
       >Star on GitHub<RightArrow /></a>
     </div>

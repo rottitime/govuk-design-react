@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.7.2
+
+### Patch Changes
+
+- c7f87c6: Storybook deployment fix to monitor story folder
+
 ## 0.7.1
 
 ### Patch Changes

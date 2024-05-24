@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import Input from './Input'
-import { ChangeEvent } from 'react'
-import { userEvent } from '@storybook/test'
+import type { ChangeEvent } from 'react'
+import userEvent from '@testing-library/user-event'
 
 describe('Input', () => {
   it('renders without error', () => {

@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useId, useState } from 'react'
+import { useEffect, useId, useState, type ChangeEvent } from 'react'
 import Input from '../Input/Input'
 import FormGroup from '../FormGroup/FormGroup'
 import Label from '../Label/Label'

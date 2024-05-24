@@ -1,8 +1,8 @@
-import { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 import Date from './Date'
 import userEvent from '@testing-library/user-event'
 import { labelsDate } from '../constants'
+import type { ComponentProps } from 'react'
 
 const { dd, mm, yyyy } = labelsDate
 const mockOnChange = vi.fn()

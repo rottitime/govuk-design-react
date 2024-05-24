@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.6.0
+
+### Minor Changes
+
+- fe30560: Documentation for Readme, Pull requests and Storybook
+
 ## 0.5.0
 
 ### Minor Changes

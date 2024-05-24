@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.5.0
+
+### Minor Changes
+
+- 5da8397: Colour Palette
+
 ## 0.4.0
 
 ### Minor Changes

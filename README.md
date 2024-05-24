@@ -9,6 +9,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Demo](#demo)
 - [Benefits](#benefits)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
@@ -22,6 +23,10 @@
 Welcome to **GovUK Design React**, the ultimate library for integrating the UK Government Design System with React! 🚀
 
 Are you a React developer tired of reinventing the wheel to comply with the UK Government's design standards? Look no further! GovUK Design React is here to save you time and effort by providing pre-built, accessible, and fully customizable React components based on the GovUK Design System.
+
+## Demo
+
+Check out the live example at https://rottitime.github.io/govuk-design-react/?path=/docs/configure-your-project--docs
 
 ## Benefits
 

@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.7.0
+
+### Minor Changes
+
+- b290152: Content update for Storybook
+
 ## 0.6.0
 
 ### Minor Changes

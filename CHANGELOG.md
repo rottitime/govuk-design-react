@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.7.1
+
+### Patch Changes
+
+- b253dd6: minor content updates
+
 ## 0.7.0
 
 ### Minor Changes

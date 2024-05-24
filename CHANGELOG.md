@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.4.0
+
+### Minor Changes
+
+- 47965e7: initial set of components
+
 ## 0.3.2
 
 ### Patch Changes

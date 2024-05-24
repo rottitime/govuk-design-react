@@ -1,10 +1,10 @@
-# Description
+## ✅ What
 
 Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
 Fixes # (issue)
 
-## Type of change
+## 🤔 Why
 
 Please delete options that are not relevant.
 
@@ -13,7 +13,7 @@ Please delete options that are not relevant.
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
 
-# Checklist:
+## 🔖 Checklist
 
 - [ ] I have generated a version file for this change (run `npx changeset`)
 - [ ] My code follows the style guidelines of this project

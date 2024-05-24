@@ -47,8 +47,8 @@ describe('Date', () => {
       expect(mockOnChange).toHaveBeenCalledWith('02/01/2020')
     })
 
-    it('change seperator', async () => {
-      render(<Date {...defaultProps} seperator="-" />)
+    it('change separator', async () => {
+      render(<Date {...defaultProps} separator="-" />)
 
       const dayInput = screen.getByLabelText(dd)
       await userEvent.type(dayInput, '02')

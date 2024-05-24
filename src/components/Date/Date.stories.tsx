@@ -29,9 +29,9 @@ const meta: Meta<typeof Date> = {
       control: 'text',
       description: 'Override the first input id'
     },
-    seperator: {
+    separator: {
       control: 'text',
-      description: 'seperator between each date digit'
+      description: 'separator between each date digit'
     }
   }
 }

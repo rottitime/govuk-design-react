@@ -11,7 +11,7 @@ type Props = {
   format?: `${DateDigit}/${DateDigit}/${DateDigit}` | `${DateDigit}/${DateDigit}`
   hideLabels?: boolean
   value?: string
-  seperator?: string
+  separator?: string
   error?: boolean
 }
 
@@ -20,14 +20,14 @@ export default function Date({
   hideLabels,
   anchorId,
   value,
-  seperator = '/',
+  separator = '/',
   onChange,
   error
 }: Props) {
   const id = useId()
 
   const arrFormat = format.toLowerCase().split('/') as DateDigit[]
-  const [date, setDate] = useState<string[]>(String(value || '').split(seperator))
+  const [date, setDate] = useState<string[]>(String(value || '').split(separator))
 
   useEffect(() => {
     if (!value) setDate([])
@@ -38,7 +38,7 @@ export default function Date({
     const newDate: string[] = arrFormat.map((_digit, i) => date[i] || '')
     newDate[index] = value.trim()
     setDate(newDate)
-    if (typeof onChange === 'function') onChange(newDate.join(seperator))
+    if (typeof onChange === 'function') onChange(newDate.join(separator))
   }
 
   const renderInput = (digit: DateDigit, index: number) => {

@@ -9,10 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rottitime/govuk-design-react"
+    "url": "git+https://github.com/rottitime/govuk-design-react.git"
   },
   "homepage": "https://github.com/rottitime/govuk-design-react#readme",
-  "bugs": "https://github.com/rottitime/govuk-design-react/issues",
+  "bugs": {
+    "url": "https://github.com/rottitime/govuk-design-react/issues"
+  },
   "license": "MIT",
   "type": "module",
   "main": "dist/main.umd.js",
@@ -48,7 +50,8 @@
     "build-storybook": "storybook build",
     "storybook:build:preview": "http-server ./storybook-static",
     "changeset": "npx changeset",
-    "release": "npm run test:all && changeset publish"
+    "release": "npm run test:all && changeset publish",
+    "chromatic": "npx chromatic --project-token=chpt_ccdf53d190ebee8"
   },
   "peerDependencies": {
     "govuk-frontend": "^5.3.1",

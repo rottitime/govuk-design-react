@@ -1,5 +1,17 @@
 # React Govuk Design System
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Benefits](#benefits)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
 Welcome to **GovUK Design React**, the ultimate library for integrating the UK Government Design System with React! 🚀
 
 Are you a React developer tired of reinventing the wheel to comply with the UK Government's design standards? Look no further! GovUK Design React is here to save you time and effort by providing pre-built, accessible, and fully customizable React components based on the GovUK Design System.
@@ -8,27 +20,13 @@ Are you a React developer tired of reinventing the wheel to comply with the UK G
 
 By using GovUK Design React, you'll enjoy:
 
-- **Proven Design**: Powered by [GovUK Design System](https://design-system.service.gov.uk/), which goes through user testing, has the best accessibility, and is fully responsive.
-- **Time Savings**: No need to create components from scratch—get up and running quickly with pre-built components.
-- **Accessibility**: Components are designed to meet the highest accessibility standards, ensuring your application is usable by everyone.
-- **Consistency**: Maintain design consistency with the UK Government Design System across all your projects.
-- **Customization**: Easily customize components to fit your specific needs without compromising on design standards.
-- **Testing and Linting**: Built-in unit tests and linting ensure code quality and reliability.
-- **Live Documentation**: Interactive [storybook documentation](https://rottitime.github.io/govuk-design-react/?path=/story/details--primary) lets you see components in action and experiment with different configurations.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Benefits](#benefits)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-GovUK Design React transforms the robust and accessible components from the UK Government Design System into ready-to-use React components. Our library includes all the core elements you need to build beautiful, functional, and compliant government websites and applications using React.
+- 💡 **Proven Design**: Powered by [GovUK Design System](https://design-system.service.gov.uk/), which goes through user testing, has the best accessibility, and is fully responsive.
+- ⏱️ **Time Savings**: No need to create components from scratch—get up and running quickly with pre-built components.
+- ♿ **Accessibility**: Components are designed to meet the highest accessibility standards, ensuring your application is usable by everyone.
+- 🎨 **Consistency**: Maintain design consistency with the UK Government Design System across all your projects.
+- 🛠️ **Customization**: Easily customize components to fit your specific needs without compromising on design standards.
+- ✅ **Testing and Linting**: Built-in unit tests and linting ensure code quality and reliability.
+- 📚 **Live Documentation**: Interactive [storybook documentation](https://rottitime.github.io/govuk-design-react/?path=/story/details--primary) lets you see components in action and experiment with different configurations.
 
 ## Getting Started
 
@@ -80,8 +78,20 @@ If you have any questions or need further assistance, please don't hesitate to r
 
 ---
 
-## Links
+## Related Links
 
-- gov Design system: https://design-system.service.gov.uk/styles/
-- Live example https://rottitime.github.io/govuk-design-react/?path=/story/details--primary
+Here are some helpful links related to GovUK Design React:
+
+- [GovUK Design System](https://design-system.service.gov.uk/): Official website for the UK Government Design System.
+- [Storybook Documentation](https://rottitime.github.io/govuk-design-react/?path=/story/details--primary): Live examples and comprehensive guides on using each component.
+- [Contributing Guidelines](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md): Learn how to contribute to the project.
+- [License](https://github.com/rottitime/govuk-design-react/blob/main/LICENSE): View the license details for GovUK Design React.
+- [Terms and Conditions for Non-Gov Sites](https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk): Guidelines for non-government sites on making their service look like GovUK.
+
+Feel free to explore these resources for more information about GovUK Design React and its related components.
+
+---
+
+If you have any questions or need further assistance, please don't hesitate to reach out via our [GitHub issues](https://github.com/rottitime/govuk-design-react/issues) page.
+
 - Terms and conditions for non Gov sites: https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk

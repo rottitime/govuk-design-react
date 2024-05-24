@@ -6,7 +6,14 @@ on:
   push:
     branches:
       - 'main' # Replace with the branch you want to deploy from
-    paths: ['src/**/*.tsx', 'src/**/*.ts', 'src/**/*.css', 'public/**', '.storybook/*.js'] # Trigger the action only when files change in the folders defined here
+    paths: [
+        'src/**/*.tsx',
+        'src/**/*.ts',
+        'src/**/*.css',
+        'public/**',
+        '.storybook/*.js',
+        'src/stories/**'
+      ] # Trigger the action only when files change in the folders defined here
 
 permissions:
   contents: read

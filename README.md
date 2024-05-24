@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://storybook.js.org/">
+    <img src="https://rottitime.github.io/govuk-design-react/doc/logo.webp" alt="logo for React Govuk Design System " width="400" />
+  </a>
+</p>
+
 # React Govuk Design System
 
 ## Table of Contents

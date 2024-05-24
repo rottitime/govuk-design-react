@@ -1,12 +1,12 @@
 import { layout } from '@/const'
 import { insertIf } from '@/utils/array.utils'
-import { forwardRef, type HTMLProps } from 'react'
+import { type ComponentProps, forwardRef } from 'react'
 
 type Props = {
   error?: boolean
   characters?: 2 | 3 | 4 | 5 | 10 | 20
   width?: keyof typeof layout
-} & HTMLProps<HTMLInputElement>
+} & ComponentProps<'input'>
 
 const Input = forwardRef<HTMLInputElement, Props>(
   ({ width, error, className, characters, ...props }, ref) => {

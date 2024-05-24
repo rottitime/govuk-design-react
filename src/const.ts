@@ -19,7 +19,7 @@ export const layout = {
   'one-quarter': 'one-quarter'
 } as const
 
-export const tagColours = {
+export const tagColors = {
   grey: 'grey',
   green: 'green',
   turquoise: 'turquoise',

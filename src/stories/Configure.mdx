@@ -10,9 +10,12 @@ import Docs from './assets/docs.png'
 import Share from './assets/share.png'
 import FigmaPlugin from './assets/figma-plugin.png'
 import Testing from './assets/testing.png'
-import Accessibility from './assets/accessibility.png'
 import Theming from './assets/theming.png'
 import AddonLibrary from './assets/addon-library.png'
+import HourGlass from './assets/hourglass.webp'
+import Accessibility from './assets/accessibility.webp'
+import Consistency from './assets/consistency.webp'
+import Customization from './assets/customization.webp'
 
 export const RightArrow = () => (
   <svg
@@ -53,24 +56,24 @@ export const RightArrow = () => (
   </div>
   <div className="sb-section">
     <div className="sb-section-item">
-      <img
-        src={Styling}
+    <div className='image'> <img
+        src={HourGlass}
         alt="A wall of logos representing different styling technologies"
-      />
+      /></div>
       <h4 className="sb-section-item-heading">Time Savings</h4>
       <p className="sb-section-item-paragraph">Powered by [GovUK Design System](https://design-system.service.gov.uk/), which goes through user testing, has the best accessibility, and is fully responsive.</p>
       
     </div>
     <div className="sb-section-item">
       <img
-        src={Context}
+        src={Accessibility}
         alt="An abstraction representing the composition of data for a component"
       />
       <h4 className="sb-section-item-heading">Accessibility</h4>
       <p className="sb-section-item-paragraph">Components are designed to meet the highest accessibility standards, ensuring your application is usable by everyone.</p>
     </div>
     <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
+      <img src={Consistency} alt="A representation of typography and image assets" />
       <div>
         <h4 className="sb-section-item-heading">Consistency</h4>
         <p className="sb-section-item-paragraph">Maintain design consistency with the UK Government Design System across all your projects.</p>
@@ -82,7 +85,7 @@ export const RightArrow = () => (
     </div>
 
      <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
+      <img src={Customization} alt="A representation of typography and image assets" />
       <div>
         <h4 className="sb-section-item-heading">Customization</h4>
         <p className="sb-section-item-paragraph">Easily customize components to fit your specific needs without compromising on design standards.</p>
@@ -255,14 +258,27 @@ export const RightArrow = () => (
   }
 
   .sb-section-item-heading {
-    padding-top: 20px !important;
+    padding-top: 20px !important;b
     padding-bottom: 5px !important;
     margin: 0 !important;
   }
   .sb-section-item-paragraph {
-    margin: 0;
+    margin: 0;sb-section-item
     padding-bottom: 10px;
   }
+
+  .sb-section-item .image {
+    display: flex;
+    background-color: rgb(238,243,248);
+    aspect-ratio: 16 / 9;
+    border:1px solid #efefef;
+    border-radius: 5px;
+  }
+    .sb-section-item .image img {
+    object-fit: cover;
+  }
+
+  
 
   .sb-chevron {
     margin-left: 5px;

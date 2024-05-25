@@ -49,7 +49,7 @@ Ready to dive in? Here's a quick guide to get you up and running with GovUK Desi
 Install the library via npm or yarn:
 
 ```bash
-npm install govuk-design-react
+npm install @rottitime/govuk-design-react
 ```
 
 ### Usage
@@ -58,7 +58,7 @@ Using GovUK Design React is as simple as importing the components you need and i
 
 ```jsx
 import React from 'react'
-import { Button } from 'govuk-design-react'
+import { Button } from '@rottitime/govuk-design-react'
 
 const App = () => (
   <div>
@@ -96,6 +96,7 @@ Here are some helpful links related to GovUK Design React:
 
 - [GovUK Design System](https://design-system.service.gov.uk/): Official website for the UK Government Design System.
 - [Storybook Documentation](https://rottitime.github.io/govuk-design-react/?path=/story/details--primary): Live examples and comprehensive guides on using each component.
+- [Package](https://www.npmjs.com/package/@rottitime/govuk-design-react): NPM Package
 - [Contributing Guidelines](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md): Learn how to contribute to the project.
 - [License](https://github.com/rottitime/govuk-design-react/blob/main/LICENSE): View the license details for GovUK Design React.
 - [Terms and Conditions for Non-Gov Sites](https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk): Guidelines for non-government sites on making their service look like GovUK.

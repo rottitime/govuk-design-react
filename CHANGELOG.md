@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.8.0
+
+### Minor Changes
+
+- d698d0a: CHromatic
+
 ## 0.7.2
 
 ### Patch Changes

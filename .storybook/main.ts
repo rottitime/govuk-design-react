@@ -4,7 +4,7 @@ import type { StorybookConfig } from '@storybook/react-vite'
 //   require('../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css').toString()
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../src/stories/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
@@ -12,7 +12,8 @@ const config: StorybookConfig = {
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    'storybook-addon-remix-react-router'
+    'storybook-addon-remix-react-router',
+    '@chromatic-com/storybook'
   ],
   core: {
     builder: '@storybook/builder-vite'

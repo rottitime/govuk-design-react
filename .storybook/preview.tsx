@@ -17,6 +17,11 @@ const preview: Preview = {
   ],
   parameters: {
     layout: 'fullscreen',
+    options: {
+      storySort: {
+        order: ['Introduction', 'Colors']
+      }
+    },
     viewport: {
       viewports: {
         ...INITIAL_VIEWPORTS,

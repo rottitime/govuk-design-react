@@ -23,6 +23,9 @@
   "files": [
     "./dist"
   ],
+  "storybook": {
+    "url": "https://rottitime.github.io/govuk-design-react/"
+  },
   "publishConfig": {
     "access": "public"
   },

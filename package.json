@@ -47,11 +47,10 @@
     "test:all": "npm run lint && npm run test:coverage && npm run build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "build-storybook": "storybook build",
     "storybook:build:preview": "http-server ./storybook-static",
     "changeset": "npx changeset",
     "release": "npm run test:all && changeset publish",
-    "chromatic": "npx chromatic --project-token=chpt_ccdf53d190ebee8"
+    "chromatic": "npx chromatic --project-token=chpt_ccdf53d190ebee8 --build-script-name storybook:build"
   },
   "peerDependencies": {
     "govuk-frontend": "^5.3.1",

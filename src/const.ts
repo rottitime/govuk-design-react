@@ -1,6 +1,6 @@
 /**
  * UI constants for style guideline
- * @see [GOV.UK Design System](https://design-system.service.gov.uk/styles/).
+ * @see [GOV.UK Design System](https://design-system.service.gov.uk/styles/)
  *
  */
 

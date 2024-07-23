@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.8.2
+
+### Patch Changes
+
+- 990d41e: storybook content
+
 ## 0.8.1
 
 ### Patch Changes

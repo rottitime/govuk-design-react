@@ -15,6 +15,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Releasing and deployment](#releasing-and-deployment)
 - [License](#license)
 - [Related Links](#related-links)
 
@@ -76,6 +77,10 @@ Check out our [storybook documentation](https://rottitime.github.io/govuk-design
 
 We welcome contributions from the community! If you'd like to contribute, please check out our [contributing guidelines](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md) for more information on how to get started.
 
+## Releasing and deployment
+
+For versioning, publishing to npm, and Storybook deployment, see **[DEPLOYMENT.md](DEPLOYMENT.md)**.
+
 ## License
 
 GovUK Design React is open source and licensed under the [MIT License](https://github.com/rottitime/govuk-design-react/blob/main/LICENSE).
@@ -98,6 +103,7 @@ Here are some helpful links related to GovUK Design React:
 - [Storybook Documentation](https://rottitime.github.io/govuk-design-react/?path=/story/details--primary): Live examples and comprehensive guides on using each component.
 - [Package](https://www.npmjs.com/package/@rottitime/govuk-design-react): NPM Package
 - [Contributing Guidelines](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md): Learn how to contribute to the project.
+- [Deployment and releasing](DEPLOYMENT.md): Versioning, npm publish, and Storybook deployment.
 - [License](https://github.com/rottitime/govuk-design-react/blob/main/LICENSE): View the license details for GovUK Design React.
 - [Terms and Conditions for Non-Gov Sites](https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk): Guidelines for non-government sites on making their service look like GovUK.
 

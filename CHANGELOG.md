@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.9.1
+
+### Patch Changes
+
+- fbdb7ab: publish update with token deprecated
+
 ## 0.9.0
 
 ### Minor Changes

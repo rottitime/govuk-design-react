@@ -19,7 +19,7 @@
   "type": "module",
   "main": "dist/main.umd.js",
   "module": "dist/main.es.js",
-  "types": "./dist/main.d.ts",
+  "types": "./dist/lib/main.d.ts",
   "files": [
     "./dist"
   ],

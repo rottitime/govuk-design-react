@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/rottitime/govuk-design-react/issues"
   },
+  "description": "React components and templates for the GOV.UK Design System — accessible, customisable and ready for UK government services.",
   "license": "MIT",
   "type": "module",
   "main": "dist/main.umd.js",
@@ -31,14 +32,20 @@
   },
   "keywords": [
     "govuk",
-    "design",
-    "react",
-    "frontend",
+    "gov.uk",
+    "uk government",
     "design system",
+    "react",
+    "react-components",
+    "components",
+    "frontend",
     "template",
-    "component",
     "typescript",
-    "jsx"
+    "jsx",
+    "accessibility",
+    "a11y",
+    "ui",
+    "library"
   ],
   "scripts": {
     "dev": "vite",

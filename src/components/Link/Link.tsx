@@ -2,7 +2,6 @@
 
 import { isExternalUrl } from '@/utils/string.utils'
 import type { ComponentProps } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
 
 type Anchor = ComponentProps<'a'>
 type Props = Anchor & { href: string; button?: boolean }
@@ -15,13 +14,12 @@ export default function Link({ button, children, ...props }: Props) {
     role: button ? 'button' : undefined,
     ...props
   }
-  return isExternalUrl(href) ? (
-    <a rel="noopener noreferrer" {...linkProps}>
-      {children}
-    </a>
-  ) : (
-    <RouterLink {...linkProps} to={href}>
-      {children}
-    </RouterLink>
-  )
+  if (isExternalUrl(href)) {
+    return (
+      <a rel="noopener noreferrer" {...linkProps}>
+        {children}
+      </a>
+    )
+  }
+  return <a {...linkProps}>{children}</a>
 }

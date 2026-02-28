@@ -1,7 +1,3 @@
-export function helloAnything(thing: string): string {
-  return `Hello ${thing}!sswws`
-}
-
 export { default as Button } from '@/components/Button/Button'
 export { default as Caption } from '@/components/Caption/Caption'
 export { default as CssBaseline } from '@/components/CssBaseline/CssBaseline'
@@ -21,3 +17,7 @@ export { default as P } from '@/components/P/P'
 export { default as Panel } from '@/components/Panel/Panel'
 export { default as Tag } from '@/components/Tag/Tag'
 export { default as Textarea } from '@/components/Textarea/Textarea'
+
+export function helloAnything(thing: string): string {
+  return `Hello ${thing}!sswws`
+}

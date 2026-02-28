@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.9.2
+
+### Patch Changes
+
+- 977194c: another fix for publishing
+
 ## 0.9.1
 
 ### Patch Changes

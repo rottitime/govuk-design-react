@@ -13,7 +13,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  plugins: [react(), dts({ include: ['lib'] }), libCss()],
+  plugins: [react(), dts({ include: ['lib', 'src'] }), libCss()],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'lib/main.ts'),
@@ -21,7 +21,7 @@ export default defineConfig({
       fileName: (format) => `main.${format}.js`
     },
     rollupOptions: {
-      external: ['react', 'react-dom']
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime']
     },
     sourcemap: true,
     emptyOutDir: true

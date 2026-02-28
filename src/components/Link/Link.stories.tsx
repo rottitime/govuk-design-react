@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { withRouter } from 'storybook-addon-remix-react-router'
 import Link from './Link'
 
 const meta: Meta<typeof Link> = {
   title: 'Link',
   component: Link,
   tags: ['autodocs'],
-  decorators: [withRouter],
   parameters: {
     docs: {
       description: {

@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.9.0
+
+### Minor Changes
+
+- 768a01d: Export all components from main entry; fix types path for npm and improve docs/visibility.
+
 ## 0.8.2
 
 ### Patch Changes

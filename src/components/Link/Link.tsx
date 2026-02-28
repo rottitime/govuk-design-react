@@ -16,7 +16,7 @@ export default function Link({ button, children, ...props }: Props) {
   }
   if (isExternalUrl(href)) {
     return (
-      <a rel="noopener noreferrer" {...linkProps}>
+      <a {...linkProps} rel={linkProps.rel ?? 'noopener noreferrer'}>
         {children}
       </a>
     )

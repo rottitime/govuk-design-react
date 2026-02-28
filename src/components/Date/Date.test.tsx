@@ -1,6 +1,5 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Date from './Date'
-import userEvent from '@testing-library/user-event'
 import { labelsDate } from '../constants'
 import type { ComponentProps } from 'react'
 
@@ -33,51 +32,51 @@ describe('Date', () => {
   })
 
   describe('on value change', () => {
-    it('date month and year', async () => {
+    it('date month and year', () => {
       render(<Date {...defaultProps} />)
 
       const dayInput = screen.getByLabelText(dd)
-      await userEvent.type(dayInput, '02')
+      fireEvent.change(dayInput, { target: { value: '02' } })
       expect(mockOnChange).toHaveBeenCalledWith('02//')
 
-      await userEvent.type(screen.getByLabelText(mm), '01')
+      fireEvent.change(screen.getByLabelText(mm), { target: { value: '01' } })
       expect(mockOnChange).toHaveBeenCalledWith('02/01/')
 
-      await userEvent.type(screen.getByLabelText(yyyy), '2020')
+      fireEvent.change(screen.getByLabelText(yyyy), { target: { value: '2020' } })
       expect(mockOnChange).toHaveBeenCalledWith('02/01/2020')
     })
 
-    it('change separator', async () => {
+    it('change separator', () => {
       render(<Date {...defaultProps} separator="-" />)
 
       const dayInput = screen.getByLabelText(dd)
-      await userEvent.type(dayInput, '02')
+      fireEvent.change(dayInput, { target: { value: '02' } })
       expect(mockOnChange).toHaveBeenCalledWith('02--')
 
-      await userEvent.type(screen.getByLabelText(mm), '01')
+      fireEvent.change(screen.getByLabelText(mm), { target: { value: '01' } })
       expect(mockOnChange).toHaveBeenCalledWith('02-01-')
 
-      await userEvent.type(screen.getByLabelText(yyyy), '2020')
+      fireEvent.change(screen.getByLabelText(yyyy), { target: { value: '2020' } })
       expect(mockOnChange).toHaveBeenCalledWith('02-01-2020')
     })
 
-    it('month and year', async () => {
+    it('month and year', () => {
       render(<Date {...defaultProps} format="mm/yyyy" />)
 
-      await userEvent.type(screen.getByLabelText(mm), '02')
+      fireEvent.change(screen.getByLabelText(mm), { target: { value: '02' } })
       expect(mockOnChange).toHaveBeenCalledWith('02/')
 
-      await userEvent.type(screen.getByLabelText(yyyy), '2024')
+      fireEvent.change(screen.getByLabelText(yyyy), { target: { value: '2024' } })
       expect(mockOnChange).toHaveBeenCalledWith('02/2024')
     })
 
-    it('shows invalid date as default value', async () => {
+    it('shows invalid date as default value', () => {
       render(<Date {...defaultProps} format="mm/yyyy" value="13/2021" />)
       expect(screen.getByLabelText(mm)).toHaveValue('13')
       expect(screen.getByLabelText(yyyy)).toHaveValue('2021')
     })
 
-    it('rerender on new value', async () => {
+    it('rerender on new value', () => {
       const { rerender } = render(
         <Date {...defaultProps} format="dd/mm/yyyy" value="19/13/2021" />
       )

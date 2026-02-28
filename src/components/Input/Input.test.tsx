@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Input from './Input'
 import type { ChangeEvent } from 'react'
-import userEvent from '@testing-library/user-event'
 
 describe('Input', () => {
   it('renders without error', () => {
@@ -29,7 +28,7 @@ describe('Input', () => {
   })
 
   //test for onchange to ensure input value updates
-  it('updates input value when user types', async () => {
+  it('updates input value when user types', () => {
     const mockOnChange = vi.fn()
     render(
       <Input
@@ -37,7 +36,7 @@ describe('Input', () => {
       />
     )
     const inputElement = screen.getByRole('textbox')
-    await userEvent.type(inputElement, 'Hello, World!')
+    fireEvent.change(inputElement, { target: { value: 'Hello, World!' } })
     expect(inputElement).toHaveValue('Hello, World!')
   })
 })

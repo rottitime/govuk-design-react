@@ -1,4 +1,8 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { createRequire } from "node:module";
 import type { StorybookConfig } from '@storybook/react-vite'
+
+const require = createRequire(import.meta.url);
 
 // const css =
 //   require('../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css').toString()
@@ -8,12 +12,11 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
-    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     'storybook-addon-remix-react-router',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
+    '@storybook/addon-docs'
   ],
   core: {
     builder: '@storybook/builder-vite'

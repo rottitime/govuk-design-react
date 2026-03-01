@@ -1,5 +1,5 @@
-import type { Preview } from '@storybook/react'
-import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
+import type { Preview } from '@storybook/react-vite'
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from 'storybook/viewport'
 import React from 'react'
 
 import CSSBaseline from '../src/components/CssBaseline/CssBaseline'
@@ -23,7 +23,7 @@ const preview: Preview = {
       }
     },
     viewport: {
-      viewports: {
+      options: {
         ...INITIAL_VIEWPORTS,
         ...MINIMAL_VIEWPORTS
       }

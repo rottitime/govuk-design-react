@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import FileUpload from './FileUpload'
 
 const meta: Meta<typeof FileUpload> = {
-  title: 'File upload',
+  title: 'Atoms/File upload',
   component: FileUpload,
   tags: ['autodocs'],
   parameters: {

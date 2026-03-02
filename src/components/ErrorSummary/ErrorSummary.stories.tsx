@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import ErrorSummary from './ErrorSummary'
 
 const meta: Meta<typeof ErrorSummary> = {
-  title: 'Error Summary',
+  title: 'Atoms/Error Summary',
   component: ErrorSummary,
   tags: ['autodocs'],
   parameters: {

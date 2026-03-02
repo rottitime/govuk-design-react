@@ -1,0 +1,26 @@
+# Storybook / Vitest UI tests (component tests from stories).
+# See: https://storybook.js.org/docs/writing-tests/in-ci
+name: UI Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      # Playwright image so browser mode can run story tests
+      # https://playwright.dev/docs/docker#pull-the-image
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Storybook tests
+        run: npm run test-storybook

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import Link from './Link'
 
 const meta: Meta<typeof Link> = {
-  title: 'Link',
+  title: 'Atoms/Link',
   component: Link,
   tags: ['autodocs'],
   parameters: {

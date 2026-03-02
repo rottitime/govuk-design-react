@@ -3,7 +3,6 @@
 
 import { defineConfig } from 'vite'
 import path from 'path'
-import react from '@vitejs/plugin-react-swc'
 import dts from 'vite-plugin-dts'
 import libCss from 'vite-plugin-libcss'
 
@@ -13,7 +12,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  plugins: [react(), dts({ include: ['lib', 'src'] }), libCss()],
+  plugins: [dts({ include: ['lib', 'src'] }), libCss()],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'lib/main.ts'),

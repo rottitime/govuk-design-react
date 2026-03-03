@@ -1,7 +1,15 @@
 import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks'
 import { colors } from '@/const'
 
-<Meta title="Foundation/Colors" />
+<Meta
+  title="Foundation/Colors"
+  parameters={{
+    figma: {
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=724-18&t=uKHtjFmxXYtHoZTO-0'
+    },
+
+}}
+/>
 
 <ColorPalette>
   {Object.entries(colors).map(([k, v]) => (

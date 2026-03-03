@@ -14,6 +14,10 @@ const meta: Meta<typeof Button> = {
       description: {
         component: `A Button component for user Button. See https://design-system.service.gov.uk/components/button/ for more details.`
       }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=213-6&t=uKHtjFmxXYtHoZTO-0'
     }
   }
 }

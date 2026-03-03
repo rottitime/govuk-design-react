@@ -78,6 +78,7 @@
     "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^9.39.3",
     "@storybook/addon-a11y": "^10.2.14",
+    "@storybook/addon-designs": "^11.1.2",
     "@storybook/addon-docs": "^10.2.14",
     "@storybook/addon-onboarding": "^10.2.14",
     "@storybook/addon-vitest": "^10.2.14",

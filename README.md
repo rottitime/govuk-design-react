@@ -49,12 +49,16 @@ By using GovUK Design React, you'll enjoy:
 
 Ready to dive in? Here's a quick guide to get you up and running with GovUK Design React.
 
+### Requirements
+
+- **govuk-frontend** — This library uses the official GOV.UK Frontend styles and is tested with **govuk-frontend v6.x** (peer dependency `^6.1.0`). Install it in your project so components render with the correct GOV.UK look and feel.
+
 ### Installation
 
-Install the library via npm or yarn:
+Install the library and its peer dependency via npm or yarn:
 
 ```bash
-npm install @rottitime/govuk-design-react
+npm install @rottitime/govuk-design-react govuk-frontend
 ```
 
 ### Usage

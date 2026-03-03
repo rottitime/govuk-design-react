@@ -1,8 +1,6 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks'
-import HourGlass from './assets/accessibility.svg'
-import Accessibility from './assets/accessibility.svg'
-import Consistency from './assets/accessibility.svg'
-import Customization from './assets/accessibility.svg'
+import { Meta } from '@storybook/addon-docs/blocks'
+import AccessibilityIcon from './assets/accessibility.svg'
+import TutorialsIcon from './assets/tutorials.svg'
 
 export const RightArrow = () => (
   <svg
@@ -14,108 +12,208 @@ export const RightArrow = () => (
       display: 'inline-block',
       shapeRendering: 'inherit',
       verticalAlign: 'middle',
-      fill: 'currentColor',
-      'path fill': 'currentColor'
+      fill: 'currentColor'
     }}
   >
     <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
   </svg>
 )
 
-{' '}
-
-<a href="https://github.com/rottitime/govuk-design-react">
-  <img
-    src="https://rottitime.github.io/govuk-design-react/doc/logo.webp"
-    alt="logo for React Govuk Design System "
-    width="400"
-  />
-</a>
-
 <Meta title="Introduction" />
 
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # React Govuk Design System
-
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
-
-  </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-    <div className='image'> <img
-        src={HourGlass}
-        alt="Hourglass representing time savings"
-      /></div>
-      <h4 className="sb-section-item-heading">Time Savings</h4>
-      <p className="sb-section-item-paragraph">Powered by [GovUK Design System](https://design-system.service.gov.uk/), which goes through user testing, has the best accessibility, and is fully responsive.</p>
-      
-    </div>
-    <div className="sb-section-item">
-      <img
-        src={Accessibility}
-        alt="A representation of accessibility features"
-      />
-      <h4 className="sb-section-item-heading">Accessibility</h4>
-      <p className="sb-section-item-paragraph">Components are designed to meet the highest accessibility standards, ensuring your application is usable by everyone.</p>
-    </div>
-    <div className="sb-section-item">
-      <img src={Consistency} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Consistency</h4>
-        <p className="sb-section-item-paragraph">Maintain design consistency with the UK Government Design System across all your projects.</p>
-        <a
-          href="https://storybook.js.org/docs/react/configure/images-and-assets"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-
-     <div className="sb-section-item">
-      <img src={Customization} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Customization</h4>
-        <p className="sb-section-item-paragraph">Easily customize components to fit your specific needs without compromising on design standards.</p>
-        <a
-          href="https://storybook.js.org/docs/react/configure/images-and-assets"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-
-  </div>
-
+<div className="sb-container sb-hero">
+  <h1 className="sb-hero-title">React GOV.UK Design System</h1>
+  <p className="sb-hero-subtitle">
+    Production-ready React components based on the{' '}
+    <a
+      href="https://design-system.service.gov.uk/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GOV.UK Design System
+    </a>
+    —trusted by UK government services and built to the highest standards of
+    accessibility, clarity, and consistency.
+  </p>
 </div>
 
 <div className="sb-container">
-  <div className='sb-section-title'>
-
-# Getting Started
-
-    ```bash
-    npm install @rottitime/govuk-design-react
-    ```
-
-    For full guidelines and setup see [https://github.com/rottitime/govuk-design-react?tab=readme-ov-file#getting-started](https://github.com/rottitime/govuk-design-react?tab=readme-ov-file#getting-started).
-
-    </div>
-
+  <h2 className="sb-section-title">Compatibility</h2>
+  <div className="sb-callout">
+    <p className="sb-callout-text">
+      These components are built for use with{' '}
+      <a
+        href="https://www.npmjs.com/package/govuk-frontend"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        govuk-frontend
+      </a>{' '}
+      v6 and the official GOV.UK Design System. Install <code>govuk-frontend</code> in
+      your project so styles and patterns match the design system.
+    </p>
   </div>
+</div>
 
 <div className="sb-container">
-  <div className='sb-section-title'>
-    # Do more with React Govuk Design System
-
-    Now that you've integrated the React Govuk Design System, consider customizing its components to match your project's visual identity and ensure full responsiveness across devices. Explore advanced features like internationalization and server-side rendering for broader accessibility and improved performance. Integrate state management libraries and employ performance optimization techniques to manage complex states efficiently and enhance overall user experience. Prioritize accessibility enhancements through audits and user testing, and actively engage with the Govuk Design System community to share best practices and contribute to ongoing improvements. By embracing these strategies, you'll unlock the full potential of the React Govuk Design System and build robust, accessible, and user-friendly applications tailored to your users' needs.
-
+  <h2 className="sb-section-title">Why the GOV.UK Design System?</h2>
+  <p className="sb-section-lead">
+    The GOV.UK Design System is used across hundreds of government services in the UK. It
+    is continuously tested with real users, maintained by the Government Digital Service
+    (GDS), and designed so that everyone can use your service—including people with
+    disabilities or using assistive technology.
+  </p>
+  <div className="sb-section">
+    <div className="sb-section-item">
+      <div className="sb-section-item-image">
+        <img src={TutorialsIcon} alt="Guide representing time savings" />
+      </div>
+      <h3 className="sb-section-item-heading">Ship faster</h3>
+      <p className="sb-section-item-paragraph">
+        Stop rebuilding buttons, forms, and patterns from scratch. Use components that are
+        already researched, tested, and approved—so you can focus on your service instead
+        of reinventing the wheel.
+      </p>
+    </div>
+    <div className="sb-section-item">
+      <div className="sb-section-item-image">
+        <img src={AccessibilityIcon} alt="Accessibility icon" />
+      </div>
+      <h3 className="sb-section-item-heading">Accessibility built in</h3>
+      <p className="sb-section-item-paragraph">
+        Meet WCAG 2.1 and government accessibility requirements out of the box. Components
+        include semantic HTML, ARIA where needed, keyboard support, and guidance so your
+        service works for everyone.
+      </p>
+      <a
+        href="https://design-system.service.gov.uk/accessibility/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Accessibility guidance <RightArrow />
+      </a>
+    </div>
+    <div className="sb-section-item">
+      <div className="sb-section-item-image">
+        <img src={AccessibilityIcon} alt="Consistency and patterns" />
+      </div>
+      <h3 className="sb-section-item-heading">Consistency users trust</h3>
+      <p className="sb-section-item-paragraph">
+        Match the look and behaviour of GOV.UK services. Users already know how these
+        patterns work—reducing cognitive load and building confidence in your service.
+      </p>
+      <a
+        href="https://design-system.service.gov.uk/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Explore the design system <RightArrow />
+      </a>
+    </div>
+    <div className="sb-section-item">
+      <div className="sb-section-item-image">
+        <img src={TutorialsIcon} alt="Customisation" />
+      </div>
+      <h3 className="sb-section-item-heading">Customise when needed</h3>
+      <p className="sb-section-item-paragraph">
+        Start from solid defaults, then adapt components to your brand or project—without
+        breaking accessibility or design principles.
+      </p>
+    </div>
   </div>
+</div>
 
+<div className="sb-container">
+  <h2 className="sb-section-title">Getting started</h2>
+  <div className="sb-section-title">
+    <pre className="sb-code">
+      <code>npm install @rottitime/govuk-design-react</code>
+    </pre>
+    <p>
+      For full setup, theming, and usage see the{' '}
+      <a
+        href="https://github.com/rottitime/govuk-design-react?tab=readme-ov-file#getting-started"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        project README
+      </a>
+      .
+    </p>
+  </div>
+</div>
+
+<div className="sb-container">
+  <h2 className="sb-section-title">Do more with the design system</h2>
+  <p className="sb-section-lead">
+    Once you&apos;re using the React GOV.UK Design System, you can customise components
+    for your brand, ensure layouts work on all devices, and follow the design
+    system&apos;s patterns for content and page structure. Use the official{' '}
+    <a
+      href="https://design-system.service.gov.uk/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GOV.UK Design System documentation
+    </a>{' '}
+    for guidance on when and how to use each pattern, accessibility, and contributing
+    back. Building with these components helps you create services that are robust,
+    inclusive, and familiar to users.
+  </p>
 </div>
 
 <style>
   {`
   .sb-container {
     margin-bottom: 48px;
+  }
+
+  .sb-hero {
+    text-align: center;
+    padding: 24px 0 32px;
+  }
+
+  .sb-hero-title {
+    font-size: 2rem;
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+
+  .sb-hero-subtitle {
+    font-size: 1.125rem;
+    margin: 0;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  .sb-hero-subtitle a {
+    font-weight: 600;
+  }
+
+  .sb-callout {
+    background: #f3f2f1;
+    border-left: 4px solid #1d70b8;
+    padding: 16px 20px;
+    margin-bottom: 8px;
+  }
+
+  .sb-callout-text {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .sb-callout-text a {
+    font-weight: 600;
+  }
+
+  .sb-callout-text code {
+    font-family: monospace;
+    font-size: 0.9em;
+    background: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 2px;
   }
 
   .sb-section {
@@ -125,46 +223,79 @@ export const RightArrow = () => (
     gap: 20px;
   }
 
-  img {
-    object-fit: cover;
+  .sb-section-title {
+    margin-bottom: 16px;
   }
 
-  .sb-section-title {
-    margin-bottom: 32px;
+  .sb-section-title h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+  }
+
+  .sb-section-lead {
+    margin: 0 0 32px;
+    line-height: 1.5;
+    max-width: 720px;
+  }
+
+  .sb-code {
+    background: #f3f2f1;
+    padding: 12px 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0 0 16px;
+  }
+
+  .sb-code code {
+    font-family: monospace;
+    font-size: 14px;
+  }
+
+  img {
+    object-fit: contain;
   }
 
   .sb-section a:not(h1 a, h2 a, h3 a) {
     font-size: 14px;
   }
 
-  .sb-section-item, .sb-grid-item {
+  .sb-section-item,
+  .sb-grid-item {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 
-  .sb-section-item-heading {
-    padding-top: 20px !important;
-    padding-bottom: 5px !important;
+  .sb-section-item-heading,
+  .sb-section-item h3 {
+    padding-top: 16px !important;
+    padding-bottom: 6px !important;
     margin: 0 !important;
+    font-size: 1.125rem;
   }
+
   .sb-section-item-paragraph {
     margin: 0;
     padding-bottom: 10px;
+    line-height: 1.5;
   }
 
-  .sb-section-item .image {
+  .sb-section-item-image {
     display: flex;
-    background-color: rgb(238,243,248);
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(238, 243, 248);
     aspect-ratio: 16 / 9;
-    border:1px solid #efefef;
+    border: 1px solid #efefef;
     border-radius: 5px;
-  }
-    .sb-section-item .image img {
-    object-fit: cover;
+    padding: 12px;
   }
 
-  
+  .sb-section-item-image img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
 
   .sb-chevron {
     margin-left: 5px;
@@ -198,7 +329,6 @@ export const RightArrow = () => (
     background-color: #EEF3F8;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #EEF3F8;
     height: 180px;
     margin-bottom: 48px;
     overflow: hidden;
@@ -210,7 +340,7 @@ export const RightArrow = () => (
   }
 
   .sb-addon-text h4 {
-    padding-top: 0px;
+    padding-top: 0;
   }
 
   .sb-addon-img {
@@ -274,10 +404,9 @@ export const RightArrow = () => (
     .sb-addon-img img {
       width: 1200px;
       transform: rotate(-12deg);
-      margin-left: 0;
+      margin-left: -24px;
       margin-top: 48px;
       margin-bottom: -40px;
-      margin-left: -24px;
     }
   }
   `}

@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import FormGroup from './FormGroup'
 import Input from '../Input/Input'
 import Label from '../Label/Label'
 
 const meta: Meta<typeof FormGroup> = {
-  title: 'FormGroup',
+  title: 'Atoms/FormGroup',
   component: FormGroup,
   tags: ['autodocs'],
   parameters: {

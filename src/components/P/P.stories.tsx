@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import P from './P'
 
 const meta: Meta<typeof P> = {
-  title: 'Paragraph',
+  title: 'Atoms/Paragraph',
   component: P,
   tags: ['autodocs'],
   parameters: {

@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import Hint from './Hint'
 import Input from '../Input/Input'
 import Label from '../Label/Label'
 
 const meta: Meta<typeof Hint> = {
-  title: 'Hint',
+  title: 'Atoms/Hint',
   component: Hint,
   tags: ['autodocs'],
   parameters: {

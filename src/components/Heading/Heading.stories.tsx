@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import Heading from './Heading'
 import { sizes } from '@/const'
 
 const meta: Meta<typeof Heading> = {
-  title: 'Headings',
+  title: 'Atoms/Headings',
   component: Heading,
 
   parameters: {

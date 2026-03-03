@@ -1,4 +1,4 @@
-import 'govuk-frontend/dist/govuk/all.scss'
+import 'govuk-frontend/dist/govuk/govuk-frontend.min.css'
 
 function CssBaseline() {
   return null

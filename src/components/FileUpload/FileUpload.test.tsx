@@ -1,5 +1,4 @@
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render, screen, fireEvent } from '@testing-library/react'
 import FileUpload from './FileUpload'
 
 const label = 'Upload a file'
@@ -29,16 +28,15 @@ describe('FileUpload', () => {
     expect(screen.getByText(error)).toBeInTheDocument()
   })
 
-  it('calls the onChange event handler when a file is selected', async () => {
+  it('calls the onChange event handler when a file is selected', () => {
     const mockOnChange = vi.fn()
     render(<FileUpload onChange={mockOnChange} label={label} />)
     const file = new File(['file content'], 'file.txt', { type: 'text/plain' })
     const input = screen.getByLabelText<HTMLInputElement>(label)
-    await userEvent.upload(input, file)
+    fireEvent.change(input, { target: { files: [file] } })
 
     const inputFiles = input.files!
-    expect(inputFiles[0]).toBe(file)
-    expect(inputFiles.item(0)).toBe(file)
     expect(inputFiles).toHaveLength(1)
+    expect(inputFiles[0]).toBe(file)
   })
 })

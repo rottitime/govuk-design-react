@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import HR from './HR'
 
 const meta: Meta<typeof HR> = {
-  title: 'HR',
+  title: 'Atoms/HR',
   component: HR,
   tags: ['autodocs'],
   parameters: {

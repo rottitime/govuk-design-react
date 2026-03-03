@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import Input from './Input'
 import { layout } from '@/const'
 
 const meta: Meta<typeof Input> = {
-  title: 'Input',
+  title: 'Atoms/Input',
   component: Input,
   parameters: {
     docs: {
@@ -41,7 +41,8 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     error: false,
-    value: undefined
+    value: undefined,
+    'aria-label': 'Input'
   }
 }
 

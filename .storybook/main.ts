@@ -1,38 +1,14 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 
-// const css =
-//   require('../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css').toString()
-
 const config: StorybookConfig = {
-  stories: ['../src/stories/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-onboarding',
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
-    '@storybook/addon-interactions',
+    '@storybook/addon-vitest',
     '@storybook/addon-a11y',
-    'storybook-addon-remix-react-router',
-    '@chromatic-com/storybook'
+    '@storybook/addon-docs',
+    '@storybook/addon-onboarding'
   ],
-  core: {
-    builder: '@storybook/builder-vite'
-  },
-  framework: {
-    name: '@storybook/react-vite',
-    options: {}
-  },
-  staticDirs: ['../public'],
-  viteFinal: (config, { configType }) => {
-    //fix for github pages 404
-    if (configType === 'PRODUCTION') {
-      config.base = './'
-    }
-
-    return config
-  },
-  previewHead: (head) => `
-    ${head}
-  `
+  framework: '@storybook/react-vite'
 }
 export default config

@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import Date from './Date'
 import type { ComponentProps } from 'react'
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 
 type Format = ComponentProps<typeof Date>['format']
 
 const meta: Meta<typeof Date> = {
-  title: 'Date',
+  title: 'Atoms/Date',
   component: Date,
   tags: ['autodocs'],
   parameters: {

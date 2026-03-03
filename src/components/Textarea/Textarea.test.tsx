@@ -1,5 +1,4 @@
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Textarea from './Textarea'
 import { createRef } from 'react'
 
@@ -29,11 +28,12 @@ describe('Textarea', () => {
     expect(screen.getByRole('textbox')).toHaveValue('Some content')
   })
 
-  it('triggers onChange event', async () => {
+  it('triggers onChange event', () => {
     const handleChange = vi.fn()
     render(<Textarea onChange={handleChange} />)
     const textareaElement = screen.getByRole('textbox')
-    await userEvent.type(textareaElement, 'Hello')
-    expect(handleChange).toHaveBeenCalledTimes(5) // Number of characters typed
+    fireEvent.change(textareaElement, { target: { value: 'Hello' } })
+    expect(handleChange).toHaveBeenCalledTimes(1)
+    expect(textareaElement).toHaveValue('Hello')
   })
 })

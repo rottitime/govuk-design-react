@@ -11,9 +11,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      # Playwright image so browser mode can run story tests
-      # https://playwright.dev/docs/docker#pull-the-image
-      image: mcr.microsoft.com/playwright:v1.52.0-noble
+      # Playwright image must match package.json playwright version (1.58.x)
+      # so browser paths (chrome-headless-shell) match. See: https://playwright.dev/docs/docker
+      image: mcr.microsoft.com/playwright:v1.58.2-noble
     steps:
       - uses: actions/checkout@v4
 

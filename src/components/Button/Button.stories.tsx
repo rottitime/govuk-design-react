@@ -8,6 +8,7 @@ const meta: Meta<typeof Button> = {
   args: {
     onClick: fn()
   },
+
   tags: ['autodocs'],
   parameters: {
     docs: {

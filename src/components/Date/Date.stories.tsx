@@ -9,7 +9,12 @@ const meta: Meta<typeof Date> = {
   title: 'Atoms/Date',
   component: Date,
   tags: ['autodocs'],
+
   parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=17984-10767&t=pO0o7t7Qev4PDjPK-0'
+    },
     docs: {
       description: {
         component: `A Date component for user Date. See https://design-system.service.gov.uk/components/date-input/ for more details.`

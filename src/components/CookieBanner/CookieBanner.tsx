@@ -2,12 +2,11 @@
 
 import type { ComponentProps, ReactNode } from 'react'
 
-export type CookieBannerAction = {
-  text: string
-  type?: 'button' | 'link'
-  href?: string
-  onClick?: () => void
-}
+import { insertIf } from '@/utils/array.utils'
+
+export type CookieBannerAction =
+  | { text: string; type?: 'button'; onClick?: () => void; href?: never }
+  | { text: string; type: 'link'; href: string; onClick?: never }
 
 type Props = {
   heading?: string
@@ -26,7 +25,10 @@ export default function CookieBanner({
 }: Props) {
   return (
     <div
-      className={`govuk-cookie-banner ${className || ''}`.trim()}
+      className={[
+        'govuk-cookie-banner',
+        ...insertIf(!!className, className as string)
+      ].join(' ')}
       data-nosnippet
       role="region"
       aria-label="Cookie banner"
@@ -44,18 +46,18 @@ export default function CookieBanner({
         </div>
         {actions && actions.length > 0 && (
           <div className="govuk-button-group">
-            {actions.map((action, index) =>
+            {actions.map((action) =>
               action.type === 'link' ? (
                 <a
-                  key={index}
+                  key={action.text}
                   className="govuk-link"
-                  href={action.href || '#'}
+                  href={action.href}
                 >
                   {action.text}
                 </a>
               ) : (
                 <button
-                  key={index}
+                  key={action.text}
                   type="button"
                   className="govuk-button"
                   data-module="govuk-button"

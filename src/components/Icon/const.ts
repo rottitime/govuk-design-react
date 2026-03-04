@@ -1,1 +1,1 @@
-export const ICONS = ['Crest', 'CrownLogoQueen', 'CrownLogo'] as const
+export const ICONS = ['Crest', 'CrownLogoQueen', 'CrownLogo', 'Search'] as const

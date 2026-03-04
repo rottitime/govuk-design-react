@@ -1,15 +1,11 @@
-import type { SVGProps } from 'react'
+import type { SVGRProps } from '../types'
 
-interface SVGRProps {
-  title?: string
-}
-
-const SvgComponent = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgComponent = ({ title, ...props }: SVGRProps) => (
   <svg
     aria-hidden="true"
     className="govuk-header__logotype-crown gem-c-layout-super-navigation-header__logotype-crown"
-    height="1em"
     viewBox="0 0 132 97"
+    height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

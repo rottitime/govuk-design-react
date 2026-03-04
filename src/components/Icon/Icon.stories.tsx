@@ -128,3 +128,9 @@ export const CrownLogoQueen: Story = {
     }
   }
 }
+
+export const Search: Story = {
+  args: {
+    icon: 'Search'
+  }
+}

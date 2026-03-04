@@ -38,7 +38,7 @@ export default function Select({
     <div
       className={[
         'govuk-form-group',
-        ...insertIf(errorMessage, 'govuk-form-group--error')
+        ...insertIf(!!errorMessage, 'govuk-form-group--error')
       ].join(' ')}
     >
       <label className="govuk-label" htmlFor={id}>
@@ -57,8 +57,8 @@ export default function Select({
       <select
         className={[
           'govuk-select',
-          ...insertIf(errorMessage, 'govuk-select--error'),
-          ...insertIf(className, className as string)
+          ...insertIf(!!errorMessage, 'govuk-select--error'),
+          ...insertIf(!!className, className as string)
         ].join(' ')}
         id={id}
         name={name}

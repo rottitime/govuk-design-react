@@ -37,9 +37,9 @@ describe('Breadcrumbs', () => {
 
   it('renders current page without a link', () => {
     render(<Breadcrumbs items={items} />)
-    const current = screen.getByText('Apply online')
-    expect(current.tagName).toBe('SPAN')
-    expect(current).toHaveAttribute('aria-current', 'page')
+    const listItem = screen.getByText('Apply online').closest('li')
+    expect(listItem).toHaveAttribute('aria-current', 'page')
+    expect(screen.queryByRole('link', { name: 'Apply online' })).not.toBeInTheDocument()
   })
 
   it('applies collapse on mobile class', () => {

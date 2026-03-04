@@ -2,6 +2,8 @@
 
 import type { ComponentProps } from 'react'
 
+import { insertIf } from '@/utils/array.utils'
+
 export type BreadcrumbItem = {
   text: string
   href?: string
@@ -10,34 +12,37 @@ export type BreadcrumbItem = {
 type Props = {
   items: BreadcrumbItem[]
   collapseOnMobile?: boolean
-} & ComponentProps<'nav'>
+} & Omit<ComponentProps<'nav'>, 'children'>
 
 export default function Breadcrumbs({
   items,
-  collapseOnMobile,
+  collapseOnMobile = false,
   className,
   ...props
 }: Props) {
-  const classes = [
-    'govuk-breadcrumbs',
-    ...(collapseOnMobile ? ['govuk-breadcrumbs--collapse-on-mobile'] : [])
-  ].join(' ')
-
   return (
     <nav
-      className={`${classes} ${className || ''}`.trim()}
+      className={[
+        'govuk-breadcrumbs',
+        ...insertIf(collapseOnMobile, 'govuk-breadcrumbs--collapse-on-mobile'),
+        ...insertIf(!!className, className as string)
+      ].join(' ')}
       aria-label="Breadcrumb"
       {...props}
     >
       <ol className="govuk-breadcrumbs__list">
-        {items.map((item, index) => (
-          <li key={index} className="govuk-breadcrumbs__list-item">
+        {items.map((item) => (
+          <li
+            key={item.href || item.text}
+            className="govuk-breadcrumbs__list-item"
+            {...(!item.href ? { 'aria-current': 'page' as const } : {})}
+          >
             {item.href ? (
               <a className="govuk-breadcrumbs__link" href={item.href}>
                 {item.text}
               </a>
             ) : (
-              <span aria-current="page">{item.text}</span>
+              item.text
             )}
           </li>
         ))}

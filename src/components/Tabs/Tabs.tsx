@@ -25,7 +25,7 @@ export default function Tabs({
     <div
       className={[
         'govuk-tabs',
-        ...insertIf(className, className as string)
+        ...insertIf(!!className, className as string)
       ].join(' ')}
       data-module="govuk-tabs"
       {...props}

@@ -6,6 +6,10 @@ const meta: Meta<typeof Caption> = {
   component: Caption,
   tags: ['autodocs'],
   parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=724-19&t=pO0o7t7Qev4PDjPK-0'
+    },
     docs: {
       description: {
         component:

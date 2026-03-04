@@ -1,5 +1,12 @@
 # @rottitime/govuk-design-react
 
+## 0.10.0
+
+### Minor Changes
+
+- b185806: Updated to v6 of the official gov design system. Document govuk-frontend v6 requirement and add compatibility callout in README and Storybook
+- dcb9c61: update all outdated packaged. storybook upgrade and ci pipelines
+
 ## 0.9.2
 
 ### Patch Changes
@@ -90,7 +97,6 @@
 ### Minor Changes
 
 - 352befa: New Component Input with constants and types
-
   - New Input field
   - Constant files for lyaout, width, and tag colors
   - Useful types file for extraction of constants
@@ -104,7 +110,6 @@
 ### Minor Changes
 
 - 94cf21d: New Component Input with constants and types
-
   - New Input field
   - Constant files for lyaout, width, and tag colors
   - Useful types file for extraction of constants

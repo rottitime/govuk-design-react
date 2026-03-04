@@ -12,6 +12,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Storybook](https://img.shields.io/badge/Storybook-Live%20demo-ff4785?logo=storybook)](https://rottitime.github.io/govuk-design-react/)
 
+**🙌 [We're looking for volunteer contributors](VOLUNTEERS.md)** — help us grow this library. All levels welcome.
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -21,6 +23,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Volunteer with us](#volunteer-with-us)
 - [Releasing and deployment](#releasing-and-deployment)
 - [License](#license)
 - [Related Links](#related-links)
@@ -85,6 +88,10 @@ See the [Storybook documentation](https://rottitime.github.io/govuk-design-react
 
 We welcome contributions from the community! If you'd like to contribute, please check out our [contributing guidelines](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md) for more information on how to get started.
 
+## Volunteer with us
+
+We're actively looking for **volunteer contributors** to help build components, improve docs, fix bugs, and boost accessibility. Whether you're experienced or learning — [see how you can help →](VOLUNTEERS.md)
+
 ## Releasing and deployment
 
 For versioning, publishing to npm, and Storybook deployment, see **[DEPLOYMENT.md](DEPLOYMENT.md)**.
@@ -101,6 +108,7 @@ MIT — see [LICENSE](https://github.com/rottitime/govuk-design-react/blob/main/
 - [Storybook](https://rottitime.github.io/govuk-design-react/) — component demos and docs
 - [npm package](https://www.npmjs.com/package/@rottitime/govuk-design-react)
 - [Contributing](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md)
+- [Volunteers](VOLUNTEERS.md) — join as a volunteer contributor
 - [Deployment](DEPLOYMENT.md) — versioning, npm publish, Storybook
 - [Terms for non-GOV.UK sites](https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk)
 

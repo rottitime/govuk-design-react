@@ -50,48 +50,15 @@ const meta: Meta<typeof Icon> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const AllIcons: Story = {
-  render: (args) => (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
-        gap: 24,
-        alignItems: 'end'
-      }}
-    >
-      {ICONS.map((icon) => (
-        <div
-          key={icon}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 8
-          }}
-        >
-          <Icon {...args} icon={icon} size={args.size ?? 32} />
-          <span style={{ fontSize: 12, color: '#505a5f' }}>{icon}</span>
-        </div>
-      ))}
-    </div>
-  ),
-  args: {
-    size: 32
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Gallery of all available icons. Add new icons to the `icons` folder and to the `icon` prop type to see them here.'
-      }
-    }
-  }
-}
-
 export const Crest: Story = {
   args: {
     icon: 'Crest'
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=19792-14486&t=pO0o7t7Qev4PDjPK-0'
+    }
   }
 }
 

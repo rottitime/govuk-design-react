@@ -14,7 +14,7 @@ const meta: Meta<typeof InsetText> = {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=213-16&t=uKHtjFmxXYtHoZTO-0'
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=18774-13519&t=pO0o7t7Qev4PDjPK-0'
     }
   }
 }

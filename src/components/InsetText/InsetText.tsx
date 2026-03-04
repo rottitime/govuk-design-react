@@ -4,7 +4,7 @@ import type { ComponentProps, ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function InsetText({
   children,

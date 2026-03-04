@@ -96,8 +96,7 @@ export default function CharacterCount({
           className={[
             'govuk-textarea',
             'govuk-js-character-count',
-            ...insertIf(!!errorMessage, 'govuk-textarea--error'),
-            ...insertIf(isOverLimit, 'govuk-textarea--error')
+            ...insertIf(!!errorMessage || isOverLimit, 'govuk-textarea--error')
           ].join(' ')}
           id={id}
           name={name}
@@ -123,7 +122,7 @@ export default function CharacterCount({
         aria-live="polite"
         aria-hidden={!thresholdReached}
       >
-        {thresholdReached ? message : `You can enter up to ${limit} ${unit}s`}
+        {thresholdReached ? message : `You can enter up to ${limit} ${unit}${limit !== 1 ? 's' : ''}`}
       </div>
     </div>
   )

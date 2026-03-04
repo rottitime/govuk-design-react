@@ -29,7 +29,7 @@ export default function Fieldset({
     <fieldset
       className={[
         'govuk-fieldset',
-        ...insertIf(className, className as string)
+        ...insertIf(!!className, className as string)
       ].join(' ')}
       {...props}
     >

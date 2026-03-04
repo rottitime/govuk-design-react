@@ -2,6 +2,8 @@
 
 import type { ComponentProps } from 'react'
 
+import { insertIf } from '@/utils/array.utils'
+
 type Props = {
   href?: string
 } & ComponentProps<'a'>
@@ -15,9 +17,12 @@ export default function SkipLink({
   return (
     <a
       href={href}
-      className={`govuk-skip-link ${className || ''}`.trim()}
-      data-module="govuk-skip-link"
+      className={[
+        'govuk-skip-link',
+        ...insertIf(!!className, className as string)
+      ].join(' ')}
       {...props}
+      data-module="govuk-skip-link"
     >
       {children}
     </a>

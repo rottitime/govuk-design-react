@@ -50,6 +50,17 @@ describe('NotificationBanner', () => {
     )
   })
 
+  it('links aria-labelledby to the title id', () => {
+    const { container } = render(
+      <NotificationBanner>Content</NotificationBanner>
+    )
+    const banner = container.firstChild as HTMLElement
+    const labelledBy = banner.getAttribute('aria-labelledby')
+    const title = container.querySelector(`#${CSS.escape(labelledBy!)}`)
+    expect(title).toBeInTheDocument()
+    expect(title).toHaveTextContent('Important')
+  })
+
   it('passes additional props', () => {
     const { container } = render(
       <NotificationBanner className="custom" data-testid="nb">

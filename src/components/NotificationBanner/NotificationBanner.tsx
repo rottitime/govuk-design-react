@@ -1,6 +1,8 @@
 // https://design-system.service.gov.uk/components/notification-banner/
 
-import type { ComponentProps, ReactNode } from 'react'
+import { useId, type ComponentProps, type ReactNode } from 'react'
+
+import { insertIf } from '@/utils/array.utils'
 
 type Props = {
   children: ReactNode
@@ -18,23 +20,24 @@ export default function NotificationBanner({
   ...props
 }: Props) {
   const isSuccess = type === 'success'
-  const classes = [
-    'govuk-notification-banner',
-    ...(isSuccess ? ['govuk-notification-banner--success'] : [])
-  ].join(' ')
+  const titleId = useId()
 
   return (
     <div
-      className={`${classes} ${className || ''}`.trim()}
+      className={[
+        'govuk-notification-banner',
+        ...insertIf(isSuccess, 'govuk-notification-banner--success'),
+        ...insertIf(!!className, className as string)
+      ].join(' ')}
       role={role || (isSuccess ? 'alert' : 'region')}
-      aria-labelledby="govuk-notification-banner-title"
+      aria-labelledby={titleId}
       data-module="govuk-notification-banner"
       {...props}
     >
       <div className="govuk-notification-banner__header">
         <h2
           className="govuk-notification-banner__title"
-          id="govuk-notification-banner-title"
+          id={titleId}
         >
           {isSuccess ? 'Success' : title}
         </h2>

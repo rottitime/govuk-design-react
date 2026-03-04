@@ -1,7 +1,8 @@
 import { lazy, type ComponentType, type SVGProps } from 'react'
-import type { ICONS } from './const'
+import { ICONS } from './const'
 
 type IconName = (typeof ICONS)[number]
+type IconComponents = Record<IconName, IconComponent>
 
 export type Props = {
   icon: IconName
@@ -9,13 +10,15 @@ export type Props = {
   size?: number
 } & SVGProps<SVGSVGElement>
 
-const iconComponents: Record<
-  IconName,
-  ReturnType<typeof lazy<ComponentType<SVGProps<SVGSVGElement>>>>
-> = {
-  Crest: lazy(() => import('@/components/Icon/icons/Crest')),
-  CrownLogo: lazy(() => import('@/components/Icon/icons/CrownLogo'))
-}
+type IconComponent = ReturnType<typeof lazy<ComponentType<SVGProps<SVGSVGElement>>>>
+
+const iconComponents: Record<IconName, IconComponent> = ICONS.reduce<IconComponents>(
+  (acc, icon) => ({
+    ...acc,
+    [icon]: lazy(() => import(`@/components/Icon/icons/${icon}.tsx`))
+  }),
+  {} as IconComponents
+)
 
 const Icon = ({ icon, size = 100, ...props }: Props) => {
   const Component = iconComponents[icon]

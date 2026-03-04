@@ -50,18 +50,6 @@ const meta: Meta<typeof Icon> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Crest: Story = {
-  args: {
-    icon: 'Crest'
-  }
-}
-
-export const CrownLogo: Story = {
-  args: {
-    icon: 'CrownLogo'
-  }
-}
-
 export const AllIcons: Story = {
   render: (args) => (
     <div
@@ -89,7 +77,6 @@ export const AllIcons: Story = {
     </div>
   ),
   args: {
-    icon: 'Crest',
     size: 32
   },
   parameters: {
@@ -97,6 +84,46 @@ export const AllIcons: Story = {
       description: {
         story:
           'Gallery of all available icons. Add new icons to the `icons` folder and to the `icon` prop type to see them here.'
+      }
+    }
+  }
+}
+
+export const Crest: Story = {
+  args: {
+    icon: 'Crest'
+  }
+}
+
+export const CrownLogo: Story = {
+  args: {
+    icon: 'CrownLogo'
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=18169-11293&t=pO0o7t7Qev4PDjPK-0'
+    },
+    docs: {
+      description: {
+        story: 'Deprecated. Use Crest for current government branding.'
+      }
+    }
+  }
+}
+
+export const CrownLogoQueen: Story = {
+  args: {
+    icon: 'CrownLogoQueen'
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=18169-11293&t=pO0o7t7Qev4PDjPK-0'
+    },
+    docs: {
+      description: {
+        story: 'Deprecated. Use Crest for current government branding.'
       }
     }
   }

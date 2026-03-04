@@ -1,5 +1,15 @@
 # @rottitime/govuk-design-react
 
+## 0.11.0
+
+### Minor Changes
+
+- 6738266: New icons, logo and improved documentation
+
+### Patch Changes
+
+- 3974521: deprecated styled-components package
+
 ## 0.10.0
 
 ### Minor Changes

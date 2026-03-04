@@ -13,6 +13,16 @@ const meta: Meta = {
           'Gallery of all available icons. Add new icons to the `icons` folder and to the `icon` prop type to see them here.'
       }
     }
+  },
+  argTypes: {
+    size: {
+      control: { type: 'range', min: 12, max: 200, step: 1 },
+      description: 'Size in pixels (uses font-size for scaling)'
+    },
+    color: {
+      control: 'color',
+      description: 'Color of the icon'
+    }
   }
 }
 

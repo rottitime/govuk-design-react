@@ -33,7 +33,7 @@ const meta: Meta<typeof Icon> = {
       description: 'Icon to display'
     },
     size: {
-      control: { type: 'number', min: 12, max: 96, step: 4 },
+      control: { type: 'range', min: 12, max: 96, step: 4 },
       description: 'Size in pixels (uses font-size for scaling)'
     },
     title: {

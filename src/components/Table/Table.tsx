@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from 'react'
 import { insertIf } from '@/utils/array.utils'
 
 type TableHeader = {
-  text: string
+  text: ReactNode
   format?: 'numeric'
 }
 
@@ -35,7 +35,7 @@ export default function Table({
     <table
       className={[
         'govuk-table',
-        ...insertIf(className, className as string)
+        ...insertIf(!!className, className as string)
       ].join(' ')}
       {...props}
     >
@@ -75,7 +75,13 @@ export default function Table({
                 <th
                   key={cellIndex}
                   scope="row"
-                  className="govuk-table__header"
+                  className={[
+                    'govuk-table__header',
+                    ...insertIf(
+                      cell.format === 'numeric',
+                      'govuk-table__header--numeric'
+                    )
+                  ].join(' ')}
                 >
                   {cell.text}
                 </th>

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/rottitime/govuk-design-react">
-    <img src="https://rottitime.github.io/govuk-design-react/doc/logo.webp" alt="GOV.UK Design System for React" width="400" />
+    <img src="https://rottitime.github.io/govuk-design-react/doc/logo2.webp" alt="GOV.UK Design System for React" width="400" />
   </a>
 </p>
 

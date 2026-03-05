@@ -9,7 +9,7 @@ type Props = {
   title?: string
   type?: 'success'
   role?: string
-} & Omit<ComponentProps<'div'>, 'children' | 'role'>
+} & Omit<ComponentProps<'div'>, 'role'>
 
 export default function NotificationBanner({
   children,

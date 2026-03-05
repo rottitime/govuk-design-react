@@ -35,7 +35,7 @@ export default function Table({
     <table
       className={[
         'govuk-table',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       {...props}
     >

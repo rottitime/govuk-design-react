@@ -1,6 +1,6 @@
 // https://design-system.service.gov.uk/components/service-navigation/
 
-import type { ComponentProps } from 'react'
+import { useId, type ComponentProps } from 'react'
 
 import { insertIf } from '@/utils/array.utils'
 
@@ -27,14 +27,16 @@ export default function ServiceNavigation({
   className,
   ...props
 }: Props) {
+  const navId = useId()
+
   return (
     <div
       className={[
         'govuk-service-navigation',
         ...insertIf(!!className, className)
       ].join(' ')}
-      data-module="govuk-service-navigation"
       {...props}
+      data-module="govuk-service-navigation"
     >
       <div className="govuk-width-container">
         <div className="govuk-service-navigation__container">
@@ -50,12 +52,12 @@ export default function ServiceNavigation({
               <button
                 type="button"
                 className="govuk-service-navigation__toggle govuk-js-service-navigation-toggle"
-                aria-controls="navigation"
+                aria-controls={navId}
                 hidden
               >
                 {menuButtonText}
               </button>
-              <ul className="govuk-service-navigation__list" id="navigation">
+              <ul className="govuk-service-navigation__list" id={navId}>
                 {navigationItems.map((item) => (
                   <li
                     key={item.href}

@@ -36,7 +36,7 @@ export default function Header({
     <header
       className={[
         'govuk-header',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       data-module="govuk-header"
       role="banner"

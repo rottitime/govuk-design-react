@@ -13,7 +13,7 @@ type Props = {
   children: ReactNode
   actions?: CookieBannerAction[]
   hidden?: boolean
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function CookieBanner({
   heading = 'Cookies on this service',

@@ -29,11 +29,11 @@ export default function CookieBanner({
         'govuk-cookie-banner',
         ...insertIf(!!className, className)
       ].join(' ')}
+      {...props}
       data-nosnippet
       role="region"
       aria-label="Cookie banner"
       hidden={hidden}
-      {...props}
     >
       <div className="govuk-cookie-banner__message govuk-width-container">
         <div className="govuk-grid-row">
@@ -42,33 +42,33 @@ export default function CookieBanner({
               {heading}
             </h2>
             <div className="govuk-cookie-banner__content">{children}</div>
-          </div>
-        </div>
-        {actions && actions.length > 0 && (
-          <div className="govuk-button-group">
-            {actions.map((action) =>
-              action.type === 'link' ? (
-                <a
-                  key={action.text}
-                  className="govuk-link"
-                  href={action.href}
-                >
-                  {action.text}
-                </a>
-              ) : (
-                <button
-                  key={action.text}
-                  type="button"
-                  className="govuk-button"
-                  data-module="govuk-button"
-                  onClick={action.onClick}
-                >
-                  {action.text}
-                </button>
-              )
+            {actions && actions.length > 0 && (
+              <div className="govuk-button-group">
+                {actions.map((action) =>
+                  action.type === 'link' ? (
+                    <a
+                      key={action.text}
+                      className="govuk-link"
+                      href={action.href}
+                    >
+                      {action.text}
+                    </a>
+                  ) : (
+                    <button
+                      key={action.text}
+                      type="button"
+                      className="govuk-button"
+                      data-module="govuk-button"
+                      onClick={action.onClick}
+                    >
+                      {action.text}
+                    </button>
+                  )
+                )}
+              </div>
             )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

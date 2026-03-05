@@ -20,7 +20,7 @@ type Props = {
   head?: TableHeader[]
   rows: TableCell[][]
   firstCellIsHeader?: boolean
-} & Omit<ComponentProps<'table'>, 'children'>
+} & ComponentProps<'table'>
 
 export default function Table({
   caption,

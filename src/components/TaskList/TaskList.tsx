@@ -29,7 +29,7 @@ export default function TaskList({
     <ul
       className={[
         'govuk-task-list',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       {...props}
     >

@@ -66,7 +66,7 @@ export default function CharacterCount({
     <div
       className={[
         'govuk-character-count',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       data-module="govuk-character-count"
       data-maxlength={maxLength?.toString()}

@@ -27,7 +27,7 @@ export default function NotificationBanner({
       className={[
         'govuk-notification-banner',
         ...insertIf(isSuccess, 'govuk-notification-banner--success'),
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       role={role || (isSuccess ? 'alert' : 'region')}
       aria-labelledby={titleId}

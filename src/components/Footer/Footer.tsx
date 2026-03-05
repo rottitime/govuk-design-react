@@ -24,7 +24,7 @@ type Props = {
   }
   contentLicence?: ReactNode
   copyright?: { text?: string; href?: string }
-} & Omit<ComponentProps<'footer'>, 'children'>
+} & ComponentProps<'footer'>
 
 export default function Footer({
   navigation,

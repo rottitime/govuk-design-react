@@ -1,5 +1,7 @@
 # Storybook build — fails the PR if the build has errors.
 name: Storybook build test
+permissions:
+  contents: read
 
 on:
   push:

@@ -1,6 +1,6 @@
 // https://design-system.service.gov.uk/components/header/
 
-import type { ComponentProps, ReactNode } from 'react'
+import { useId, type ComponentProps, type ReactNode } from 'react'
 
 import { insertIf } from '@/utils/array.utils'
 
@@ -32,15 +32,17 @@ export default function Header({
   className,
   ...props
 }: Props) {
+  const navId = useId()
+
   return (
     <header
       className={[
         'govuk-header',
         ...insertIf(!!className, className)
       ].join(' ')}
+      {...props}
       data-module="govuk-header"
       role="banner"
-      {...props}
     >
       <div className="govuk-header__container govuk-width-container">
         <div className="govuk-header__logo">
@@ -85,13 +87,13 @@ export default function Header({
                 <button
                   type="button"
                   className="govuk-header__menu-button govuk-js-header-toggle"
-                  aria-controls="navigation"
+                  aria-controls={navId}
                   aria-label={`Show or hide ${navigationLabel}`}
                   hidden
                 >
                   {menuButtonText}
                 </button>
-                <ul id="navigation" className="govuk-header__navigation-list">
+                <ul id={navId} className="govuk-header__navigation-list">
                   {navigationItems.map((item) => (
                     <li
                       key={item.href}

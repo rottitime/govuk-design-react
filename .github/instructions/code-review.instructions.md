@@ -3,6 +3,12 @@
 ## Context
 This repository contains the `govuk-design-react` component library. Contributors are expected to follow strict standards for code quality, accessibility, testing, and documentation. Copilot should assist in generating code and suggestions that adhere to these standards.
 
+## Versioning (Changesets)
+- **When the PR includes code or library changes**, ensure a **changeset** has been added as per [DEPLOYMENT.md](../../DEPLOYMENT.md):
+  - There should be at least one new or updated file under `.changeset/*.md`.
+  - Contributors should run `npm run changeset`, choose the version bump (patch/minor/major or "none" for docs-only), add a summary, and commit the generated file with their changes.
+- Docs-only or non-release changes may use version bump "none"; otherwise a proper bump type must be chosen and the changeset file must be present.
+
 ## Code Quality
 - Ensure **no linting errors**. Follow ESLint rules configured in the repository.
 - Ensure **no TypeScript errors**. All type annotations should be correct and consistent.

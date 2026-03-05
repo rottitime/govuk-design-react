@@ -16,7 +16,7 @@ type Props = {
   errorMessage?: string
   fieldset?: { legend: string; legendSize?: 's' | 'm' | 'l' | 'xl'; legendIsHeading?: boolean }
   hint?: string
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function Radios({
   name,

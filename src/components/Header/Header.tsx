@@ -19,7 +19,7 @@ type Props = {
   menuButtonText?: string
   productName?: string
   children?: ReactNode
-} & Omit<ComponentProps<'header'>, 'children'>
+} & ComponentProps<'header'>
 
 export default function Header({
   homepageUrl = '/',

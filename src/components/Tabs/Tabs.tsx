@@ -13,7 +13,7 @@ export type TabItem = {
 type Props = {
   title: string
   items: TabItem[]
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function Tabs({
   title,

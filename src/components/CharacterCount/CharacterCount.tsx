@@ -102,9 +102,9 @@ export default function CharacterCount({
           name={name}
           rows={rows}
           aria-describedby={[
-            infoId,
             ...insertIf(!!hint, hintId),
-            ...insertIf(!!errorMessage, errorId)
+            ...insertIf(!!errorMessage, errorId),
+            infoId
           ].join(' ')}
           value={value}
           onChange={handleChange}

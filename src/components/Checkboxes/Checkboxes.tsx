@@ -28,7 +28,7 @@ type Props = {
   hint?: string
   errorMessage?: string
   small?: boolean
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 function isDivider(item: Item): item is DividerItem {
   return 'divider' in item && item.divider !== undefined

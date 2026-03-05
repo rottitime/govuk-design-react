@@ -9,7 +9,7 @@ type Props = {
   legendSize?: 's' | 'm' | 'l' | 'xl'
   legendIsHeading?: boolean
   children: ReactNode
-} & Omit<ComponentProps<'fieldset'>, 'children'>
+} & ComponentProps<'fieldset'>
 
 export default function Fieldset({
   legend,

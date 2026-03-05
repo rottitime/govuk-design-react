@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.12.0
+
+### Minor Changes
+
+- 614c59d: New Inset component. Docs update and shoutout to first contributor
+
 ## 0.11.0
 
 ### Minor Changes

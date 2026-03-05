@@ -88,6 +88,8 @@ See the [Storybook documentation](https://rottitime.github.io/govuk-design-react
 
 We welcome contributions from the community! If you'd like to contribute, please check out our [contributing guidelines](https://github.com/rottitime/govuk-design-react/blob/main/CONTRIBUTING.md) for more information on how to get started.
 
+- [@rameshreddy-adutla](https://github.com/rameshreddy-adutla) — first contributor in the door, who set the bar with solid unit tests and Storybook docs. See the [energy](https://github.com/rottitime/govuk-design-react/pulls?q=is%3Apr+is%3Aclosed+author%3Arameshreddy-adutla).
+
 ## Volunteer with us
 
 We're actively looking for **volunteer contributors** to help build components, improve docs, fix bugs, and boost accessibility. Whether you're experienced or learning — [see how you can help →](VOLUNTEERS.md)

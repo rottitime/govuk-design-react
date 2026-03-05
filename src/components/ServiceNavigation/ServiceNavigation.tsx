@@ -31,7 +31,7 @@ export default function ServiceNavigation({
     <div
       className={[
         'govuk-service-navigation',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       data-module="govuk-service-navigation"
       {...props}

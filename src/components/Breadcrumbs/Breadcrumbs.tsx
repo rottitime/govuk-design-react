@@ -12,7 +12,7 @@ export type BreadcrumbItem = {
 type Props = {
   items: BreadcrumbItem[]
   collapseOnMobile?: boolean
-} & Omit<ComponentProps<'nav'>, 'children'>
+} & ComponentProps<'nav'>
 
 export default function Breadcrumbs({
   items,

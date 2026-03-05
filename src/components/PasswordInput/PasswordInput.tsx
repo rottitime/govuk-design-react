@@ -41,7 +41,7 @@ export default function PasswordInput({
         'govuk-form-group',
         'govuk-password-input',
         ...insertIf(!!errorMessage, 'govuk-form-group--error'),
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       data-module="govuk-password-input"
     >

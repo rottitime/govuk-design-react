@@ -134,7 +134,7 @@ export default function Checkboxes({
       className={[
         'govuk-form-group',
         ...insertIf(!!errorMessage, 'govuk-form-group--error'),
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       {...props}
     >

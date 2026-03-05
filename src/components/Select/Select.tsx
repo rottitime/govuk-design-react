@@ -8,7 +8,6 @@ type SelectOption = {
   value: string
   label: string
   disabled?: boolean
-  selected?: boolean
 }
 
 type Props = {
@@ -70,7 +69,6 @@ export default function Select({
             key={option.value}
             value={option.value}
             disabled={option.disabled}
-            selected={option.selected}
           >
             {option.label}
           </option>

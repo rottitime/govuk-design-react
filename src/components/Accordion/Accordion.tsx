@@ -16,7 +16,7 @@ type Props = {
   showAllText?: string
   hideAllText?: string
   headingLevel?: 2 | 3 | 4 | 5 | 6
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function Accordion({
   sections,

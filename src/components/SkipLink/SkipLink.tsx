@@ -19,7 +19,7 @@ export default function SkipLink({
       href={href}
       className={[
         'govuk-skip-link',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       {...props}
       data-module="govuk-skip-link"

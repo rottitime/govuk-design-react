@@ -66,7 +66,7 @@ export default function Accordion({
     <div
       className={[
         'govuk-accordion',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       data-module="govuk-accordion"
       id={id}

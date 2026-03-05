@@ -29,10 +29,10 @@ export default function NotificationBanner({
         ...insertIf(isSuccess, 'govuk-notification-banner--success'),
         ...insertIf(!!className, className)
       ].join(' ')}
+      {...props}
       role={role || (isSuccess ? 'alert' : 'region')}
       aria-labelledby={titleId}
       data-module="govuk-notification-banner"
-      {...props}
     >
       <div className="govuk-notification-banner__header">
         <h2

@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from 'react'
 type Props = {
   children: ReactNode
   assistiveText?: string
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function WarningText({
   children,

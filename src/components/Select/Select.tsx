@@ -58,7 +58,7 @@ export default function Select({
         className={[
           'govuk-select',
           ...insertIf(!!errorMessage, 'govuk-select--error'),
-          ...insertIf(!!className, className as string)
+          ...insertIf(!!className, className)
         ].join(' ')}
         id={id}
         name={name}

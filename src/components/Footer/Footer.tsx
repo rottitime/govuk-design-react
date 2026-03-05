@@ -38,7 +38,7 @@ export default function Footer({
     <footer
       className={[
         'govuk-footer',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       role="contentinfo"
       {...props}

@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from 'react'
 type Props = {
   tag: string
   children: ReactNode
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function PhaseBanner({
   tag,

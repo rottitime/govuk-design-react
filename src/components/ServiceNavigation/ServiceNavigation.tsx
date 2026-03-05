@@ -16,7 +16,7 @@ type Props = {
   navigationItems?: NavigationItem[]
   navigationLabel?: string
   menuButtonText?: string
-} & Omit<ComponentProps<'div'>, 'children'>
+} & ComponentProps<'div'>
 
 export default function ServiceNavigation({
   serviceName,

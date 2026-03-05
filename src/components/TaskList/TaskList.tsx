@@ -18,7 +18,7 @@ export type TaskItem = {
 
 type Props = {
   items: TaskItem[]
-} & Omit<ComponentProps<'ul'>, 'children'>
+} & ComponentProps<'ul'>
 
 export default function TaskList({
   items,

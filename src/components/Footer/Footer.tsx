@@ -40,8 +40,8 @@ export default function Footer({
         'govuk-footer',
         ...insertIf(!!className, className)
       ].join(' ')}
-      role="contentinfo"
       {...props}
+      role="contentinfo"
     >
       <div className="govuk-width-container">
         {navigation && navigation.length > 0 && (
@@ -91,10 +91,9 @@ export default function Footer({
             {meta && (
               <>
                 {meta.items && meta.items.length > 0 && (
-                  <h2 className="govuk-visually-hidden">Support links</h2>
-                )}
-                {meta.items && meta.items.length > 0 && (
-                  <ul className="govuk-footer__inline-list">
+                  <>
+                    <h2 className="govuk-visually-hidden">Support links</h2>
+                    <ul className="govuk-footer__inline-list">
                     {meta.items.map((item) => (
                       <li key={item.href} className="govuk-footer__inline-list-item">
                         <a className="govuk-footer__link" href={item.href}>
@@ -102,7 +101,8 @@ export default function Footer({
                         </a>
                       </li>
                     ))}
-                  </ul>
+                    </ul>
+                  </>
                 )}
                 {meta.text && (
                   <span className="govuk-footer__licence-description">

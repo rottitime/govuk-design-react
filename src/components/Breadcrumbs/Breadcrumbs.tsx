@@ -25,7 +25,7 @@ export default function Breadcrumbs({
       className={[
         'govuk-breadcrumbs',
         ...insertIf(collapseOnMobile, 'govuk-breadcrumbs--collapse-on-mobile'),
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       aria-label="Breadcrumb"
       {...props}

@@ -19,7 +19,7 @@ export type SummaryListRow = {
 type Props = {
   rows: SummaryListRow[]
   noBorder?: boolean
-} & Omit<ComponentProps<'dl'>, 'children'>
+} & ComponentProps<'dl'>
 
 export default function SummaryList({
   rows,

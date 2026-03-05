@@ -34,7 +34,7 @@ export default function SummaryList({
       className={[
         'govuk-summary-list',
         ...insertIf(noBorder, 'govuk-summary-list--no-border'),
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       {...props}
     >

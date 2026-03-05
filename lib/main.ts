@@ -25,7 +25,6 @@ export { default as Tag } from '@/components/Tag/Tag'
 export { default as Textarea } from '@/components/Textarea/Textarea'
 
 export { default as InsetText } from '@/components/InsetText/InsetText'
-
 export function helloAnything(thing: string): string {
   return `Hello ${thing}!sswws`
 }

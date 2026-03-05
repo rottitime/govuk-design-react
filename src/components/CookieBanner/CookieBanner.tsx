@@ -27,7 +27,7 @@ export default function CookieBanner({
     <div
       className={[
         'govuk-cookie-banner',
-        ...insertIf(!!className, className as string)
+        ...insertIf(!!className, className)
       ].join(' ')}
       data-nosnippet
       role="region"

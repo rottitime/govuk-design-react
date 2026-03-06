@@ -21,6 +21,7 @@ export { default as Label } from '@/components/Label/Label'
 export { default as Link } from '@/components/Link/Link'
 export { default as P } from '@/components/P/P'
 export { default as Panel } from '@/components/Panel/Panel'
+export { default as ServiceNavigation } from '@/components/ServiceNavigation/ServiceNavigation'
 export { default as Tag } from '@/components/Tag/Tag'
 export { default as Textarea } from '@/components/Textarea/Textarea'
 

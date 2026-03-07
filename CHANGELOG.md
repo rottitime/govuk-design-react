@@ -1,5 +1,17 @@
 # @rottitime/govuk-design-react
 
+## 0.13.1
+
+### Patch Changes
+
+- b5161d7: eslint updates
+
+## 0.13.0
+
+### Minor Changes
+
+- e429a0f: Add Breadcrumbs component
+
 ## 0.12.0
 
 ### Minor Changes

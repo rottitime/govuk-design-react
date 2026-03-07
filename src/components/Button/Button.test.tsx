@@ -20,9 +20,9 @@ describe('Button', () => {
     )
   })
 
-  it.skip('renders a link button when href prop is provided', () => {
+  it('renders a link button when href prop is provided', () => {
     render(<Button href="https://example.com">Go to example.com</Button>)
-    const buttonElement = screen.getByRole('link')
+    const buttonElement = screen.getByRole('button')
     expect(buttonElement).toHaveAttribute('href', 'https://example.com')
   })
 

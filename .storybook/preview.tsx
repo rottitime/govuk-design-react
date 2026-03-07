@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from 'storybook/viewport'
-import React from 'react'
 
 import CSSBaseline from '../src/components/CssBaseline/CssBaseline'
 // import 'govuk-frontend/dist/govuk/all.scss'  //using CSSBaseline instead

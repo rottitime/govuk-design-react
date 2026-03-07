@@ -6,11 +6,12 @@ const text = 'Hello world!'
 
 describe('Tag', () => {
   it('renders without crashing', () => {
-    render(<Tag>{text}</Tag>)
+    const { container } = render(<Tag>{text}</Tag>)
+    expect(container.firstChild).toBeInTheDocument()
   })
 
   it('renders with the specified color', () => {
-    const colors = Object.keys(tagColors) as Array<keyof typeof tagColors>
+    const colors = Object.keys(tagColors) as (keyof typeof tagColors)[]
     colors.forEach((color) => {
       const { container } = render(<Tag color={color}>{text}</Tag>)
 

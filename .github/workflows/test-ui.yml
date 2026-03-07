@@ -2,7 +2,7 @@
 # See: https://storybook.js.org/docs/writing-tests/in-ci
 name: UI Tests
 
-on: [push]
+on: [push, pull_request]
 
 permissions:
   contents: read

@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-interface SVGRProps {
+type SVGRProps = {
   title?: string
 }
 

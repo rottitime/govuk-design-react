@@ -3,11 +3,11 @@
 import type { ComponentProps } from 'react'
 
 type Props = {
-  href?: string
+  href: string
 } & ComponentProps<'a'>
 
 export default function BackLink({
-  href = '#',
+  href,
   children = 'Back',
   className,
   ...props

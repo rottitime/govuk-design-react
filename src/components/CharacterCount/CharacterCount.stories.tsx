@@ -16,7 +16,7 @@ const meta: Meta<typeof CharacterCount> = {
 }
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof CharacterCount>
 
 export const Default: Story = {
   args: {

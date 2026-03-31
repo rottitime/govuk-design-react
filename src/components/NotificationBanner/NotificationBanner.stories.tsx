@@ -23,7 +23,7 @@ export const Default: Story = {
     children: (
       <p className="govuk-notification-banner__heading">
         You have 7 days left to send your application.{' '}
-        <a className="govuk-notification-banner__link" href="#">
+        <a className="govuk-notification-banner__link" href="/example">
           View application
         </a>
         .

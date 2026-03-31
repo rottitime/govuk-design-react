@@ -9,7 +9,7 @@ const meta: Meta<typeof ServiceNavigation> = {
     docs: {
       description: {
         component:
-          'The service navigation helps users understand that they're using your service and lets them navigate around it. See https://design-system.service.gov.uk/components/service-navigation/ for more details.'
+          `The service navigation helps users understand that they're using your service and lets them navigate around it. See https://design-system.service.gov.uk/components/service-navigation/ for more details.`
       }
     }
   }

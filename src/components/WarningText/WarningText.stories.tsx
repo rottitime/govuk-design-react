@@ -14,7 +14,7 @@ const meta: Meta<typeof WarningText> = {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=213-28&t=uKHtjFmxXYtHoZTO-0'
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=30352-18076&t=WKY41NuG4ndQHlIi-0'
     }
   }
 }

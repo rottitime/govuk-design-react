@@ -135,7 +135,7 @@ describe('Checkboxes', () => {
   })
 
   it('renders conditional content hidden when checkbox is not checked', () => {
-    const { container } = render(
+    render(
       <Checkboxes
         name="countries"
         items={[
@@ -180,7 +180,7 @@ describe('Checkboxes', () => {
   })
 
   it('wires data-aria-controls to conditional container id', () => {
-    const { container } = render(
+    render(
       <Checkboxes
         name="countries"
         items={[

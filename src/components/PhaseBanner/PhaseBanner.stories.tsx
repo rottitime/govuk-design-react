@@ -15,10 +15,6 @@ const meta: Meta<typeof PhaseBanner> = {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=20226-12488&t=iHqp2471YNPlJMvO-0'
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=20226-12488&t=iHqp2471YNPlJMvO-0'
     }
   }
 }

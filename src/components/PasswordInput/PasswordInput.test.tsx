@@ -89,7 +89,6 @@ describe('PasswordInput', () => {
     await user.click(screen.getByText('Show'))
     expect(screen.getByText('Hide')).toBeInTheDocument()
   })
-})
 
   it('links input to hint and error via aria-describedby', () => {
     render(

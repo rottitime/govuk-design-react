@@ -202,4 +202,66 @@ describe('Checkboxes', () => {
     const checkbox = screen.getByLabelText('England')
     expect(checkbox).toHaveAttribute('data-aria-controls', conditionalId)
   })
+  it('renders conditional content hidden when checkbox is not checked', () => {
+    const { container } = render(
+      <Checkboxes
+        name="countries"
+        items={[
+          {
+            value: 'england',
+            label: 'England',
+            conditional: <span>More details about England</span>
+          }
+        ]}
+      />
+    )
+
+    const conditionalContent = screen.getByText('More details about England')
+    const conditionalContainer = conditionalContent.closest('div')
+    expect(conditionalContainer).toHaveClass('govuk-checkboxes__conditional')
+    expect(conditionalContainer).toHaveClass('govuk-checkboxes__conditional--hidden')
+  })
+
+  it('renders conditional content visible when pre-checked', () => {
+    render(
+      <Checkboxes
+        name="countries"
+        items={[
+          {
+            value: 'england',
+            label: 'England',
+            checked: true,
+            conditional: <span>More details about England</span>
+          }
+        ]}
+      />
+    )
+
+    const conditionalContent = screen.getByText('More details about England')
+    const conditionalContainer = conditionalContent.closest('div')
+    expect(conditionalContainer).toHaveClass('govuk-checkboxes__conditional')
+    expect(conditionalContainer).not.toHaveClass('govuk-checkboxes__conditional--hidden')
+  })
+
+  it('wires data-aria-controls to conditional container id', () => {
+    render(
+      <Checkboxes
+        name="countries"
+        items={[
+          {
+            value: 'england',
+            label: 'England',
+            conditional: <span>More details</span>
+          }
+        ]}
+      />
+    )
+
+    const conditionalDiv = screen.getByText('More details').closest('div')
+    const conditionalId = conditionalDiv?.getAttribute('id')
+    expect(conditionalId).toBeTruthy()
+
+    const checkbox = screen.getByLabelText('England')
+    expect(checkbox).toHaveAttribute('data-aria-controls', conditionalId)
+  })
 })

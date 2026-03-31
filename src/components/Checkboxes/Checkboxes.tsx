@@ -116,7 +116,10 @@ export default function Checkboxes({
               )}
               {item.conditional && (
                 <div
-                  className="govuk-checkboxes__conditional"
+                  className={[
+                    'govuk-checkboxes__conditional',
+                    ...insertIf(!item.checked, 'govuk-checkboxes__conditional--hidden')
+                  ].join(' ')}
                   id={`conditional-${itemId}`}
                 >
                   {item.conditional}

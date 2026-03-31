@@ -27,8 +27,8 @@ export default function Tabs({
         'govuk-tabs',
         ...insertIf(!!className, className)
       ].join(' ')}
-      data-module="govuk-tabs"
       {...props}
+      data-module="govuk-tabs"
     >
       <h2 className="govuk-tabs__title">{title}</h2>
       <ul className="govuk-tabs__list">

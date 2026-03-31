@@ -120,7 +120,7 @@ export default function CharacterCount({
           ...insertIf(!thresholdReached, 'govuk-character-count__message--disabled')
         ].join(' ')}
         aria-live="polite"
-        aria-hidden={!thresholdReached}
+        aria-hidden={thresholdReached ? undefined : true}
       >
         {thresholdReached ? message : `You can enter up to ${limit} ${unit}${limit !== 1 ? 's' : ''}`}
       </div>

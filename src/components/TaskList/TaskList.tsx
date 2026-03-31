@@ -39,7 +39,10 @@ export default function TaskList({
         const hintId = item.hint ? `task-list-${index}-hint` : undefined
 
         return (
-          <li key={index} className="govuk-task-list__item govuk-task-list__item--with-link">
+          <li key={index} className={[
+              'govuk-task-list__item',
+              ...insertIf(!!item.href, 'govuk-task-list__item--with-link')
+            ].join(' ')}>
             <div className="govuk-task-list__name-and-hint">
               {item.href ? (
                 <a

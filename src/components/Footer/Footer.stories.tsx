@@ -1,16 +1,43 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import Footer from './Footer'
 
+const defaultContentLicence = (
+  <span className="govuk-footer__licence-description">
+    All content is available under the{' '}
+    <a
+      className="govuk-footer__link"
+      href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      rel="license"
+    >
+      Open Government Licence v3.0
+    </a>
+    , except where otherwise stated
+  </span>
+)
+
+const defaultCopyright = {
+  text: '© Crown copyright',
+  href: 'https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/'
+}
+
 const meta: Meta<typeof Footer> = {
   title: 'Atoms/Footer',
   component: Footer,
   tags: ['autodocs'],
+  args: {
+    contentLicence: defaultContentLicence,
+    copyright: defaultCopyright
+  },
   parameters: {
     docs: {
       description: {
         component:
           'The footer provides copyright, licensing and other information about your service and department. See https://design-system.service.gov.uk/components/footer/ for more details.'
       }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=20226-12488&t=iHqp2471YNPlJMvO-0'
     }
   }
 }

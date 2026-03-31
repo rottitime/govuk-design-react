@@ -1,6 +1,25 @@
 import { render, screen } from '@testing-library/react'
 import Footer from './Footer'
 
+const defaultLicence = (
+  <span className="govuk-footer__licence-description">
+    All content is available under the{' '}
+    <a
+      className="govuk-footer__link"
+      href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      rel="license"
+    >
+      Open Government Licence v3.0
+    </a>
+    , except where otherwise stated
+  </span>
+)
+
+const defaultCopyright = {
+  text: '© Crown copyright',
+  href: 'https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/'
+}
+
 describe('Footer', () => {
   it('renders the footer element', () => {
     render(<Footer />)
@@ -8,14 +27,16 @@ describe('Footer', () => {
   })
 
   it('renders the Open Government Licence link', () => {
-    render(<Footer />)
-    expect(
-      screen.getByRole('link', { name: 'Open Government Licence v3.0' })
-    ).toBeInTheDocument()
+    render(<Footer contentLicence={defaultLicence} />)
+    const oglLink = screen.getByRole('link', {
+      name: 'Open Government Licence v3.0'
+    })
+    expect(oglLink).toBeInTheDocument()
+    expect(oglLink).toHaveAttribute('rel', 'license')
   })
 
   it('renders Crown copyright', () => {
-    render(<Footer />)
+    render(<Footer copyright={defaultCopyright} />)
     expect(
       screen.getByRole('link', { name: '© Crown copyright' })
     ).toBeInTheDocument()

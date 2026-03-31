@@ -75,7 +75,7 @@ export default function Header({
             )}
           </a>
         </div>
-        {(serviceName || navigationItems) && (
+        {(serviceName || navigationItems?.length) && (
           <div className="govuk-header__content">
             {serviceName && (
               <a href={serviceUrl} className="govuk-header__link govuk-header__service-name">

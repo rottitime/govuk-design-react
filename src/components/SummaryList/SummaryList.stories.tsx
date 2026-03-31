@@ -9,7 +9,7 @@ const meta: Meta<typeof SummaryList> = {
     docs: {
       description: {
         component:
-          'Use the summary list to summarise information, for example, a user's responses at the end of a form. See https://design-system.service.gov.uk/components/summary-list/ for more details.'
+          `Use the summary list to summarise information, for example, a user's responses at the end of a form. See https://design-system.service.gov.uk/components/summary-list/ for more details.`
       }
     }
   }

@@ -16,7 +16,7 @@ type Props = {
   showAllText?: string
   hideAllText?: string
   headingLevel?: 2 | 3 | 4 | 5 | 6
-} & ComponentProps<'div'>
+} & Omit<ComponentProps<'div'>, 'children'>
 
 export default function Accordion({
   sections,
@@ -64,13 +64,13 @@ export default function Accordion({
 
   return (
     <div
+      {...props}
       className={[
         'govuk-accordion',
         ...insertIf(!!className, className)
       ].join(' ')}
       data-module="govuk-accordion"
       id={id}
-      {...props}
     >
       <div className="govuk-accordion__controls">
         <button

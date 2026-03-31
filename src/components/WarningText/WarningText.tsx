@@ -16,6 +16,7 @@ export default function WarningText({
   return (
     <div
       className={`govuk-warning-text ${className || ''}`.trim()}
+      role="alert"
       {...props}
     >
       <span className="govuk-warning-text__icon" aria-hidden="true">

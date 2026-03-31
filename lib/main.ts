@@ -8,6 +8,7 @@ export type {
   CheckboxesItem,
   CheckboxesOption
 } from '@/components/Checkboxes/types'
+export { default as CharacterCount } from '@/components/CharacterCount/CharacterCount'
 export { default as CssBaseline } from '@/components/CssBaseline/CssBaseline'
 export { default as Date } from '@/components/Date/Date'
 export { default as Details } from '@/components/Details/Details'

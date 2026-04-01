@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.14.0
+
+### Minor Changes
+
+- 0636881: Add PhaseBanner component
+
 ## 0.13.1
 
 ### Patch Changes

@@ -2,28 +2,27 @@ import FormGroup from '@/components/FormGroup/FormGroup'
 import Hint from '@/components/Hint/Hint'
 import Label from '@/components/Label/Label'
 import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
-import { mergeRefs } from '@/utils/component.utils'
-import {
-  cloneElement,
-  isValidElement,
-  useId,
-  type ComponentProps,
-  type ReactElement,
-  type ReactNode,
-  type Ref
-} from 'react'
-
-type AnyElementProps = { ref?: Ref<unknown>; [key: string]: unknown }
+import { useId, type ComponentProps, type ReactNode } from 'react'
 
 type FormGroupProps = ComponentProps<typeof FormGroup>
+
+/** Props to spread onto the control; `error` matches Input/Textarea (error styling). */
+export type FormFieldRenderControlProps = {
+  id: string
+  'aria-describedby'?: string
+  'aria-invalid'?: boolean
+  error: boolean
+}
 
 type Props = Omit<FormGroupProps, 'children' | 'error'> & {
   label: ReactNode
   hint?: ReactNode
   error?: ReactNode
   id?: string
-  /** The input, textarea, select, or custom field component (exactly one element). */
-  children: ReactElement<AnyElementProps>
+  /** Extra ids to include in `aria-describedby` (merged with hint/error ids). */
+  additionalAriaDescribedBy?: string
+  /** Renders the control; spread the props onto Input/Textarea (or map `error` for custom fields). */
+  renderControl: (props: FormFieldRenderControlProps) => ReactNode
 }
 
 /** Combines several aria-describedby values into one string, without duplicate ids. */
@@ -42,13 +41,6 @@ function joinAriaDescribedby(...parts: (string | undefined)[]): string | undefin
   return ids.length ? ids.join(' ') : undefined
 }
 
-/** Reads the child's ref whether it was passed as a prop (React 19) or legacy element.ref. */
-function resolveElementRef(
-  element: ReactElement<AnyElementProps>
-): Ref<unknown> | undefined {
-  return element.props.ref ?? (element as { ref?: Ref<unknown> }).ref
-}
-
 /**
  * Wraps one form control with label, optional hint, and optional error (GOV.UK pattern).
  * Wires id, aria-describedby, and aria-invalid so screen readers link the control to hint/error.
@@ -58,10 +50,10 @@ export default function FormField({
   hint,
   error,
   id: idProp,
-  children,
+  additionalAriaDescribedBy,
+  renderControl,
   ...formGroupProps
 }: Props) {
-  // Stable unique prefix for this field instance (ids must not clash on the page).
   const uid = useId()
   const fieldId = idProp ?? uid
   const hintId = `${uid}hint`
@@ -70,50 +62,28 @@ export default function FormField({
   const hasError = Boolean(error)
   const showHint = Boolean(hint)
 
-  // Hint and error nodes get these ids; the control's aria-describedby points at them.
   const describedByParts: string[] = []
   if (showHint) describedByParts.push(hintId)
   if (hasError) describedByParts.push(errorId)
 
-  if (!isValidElement(children))
-    throw new TypeError('FormField expects a single React element as children')
-
-  const childProps = children.props
-  // Keep any aria-describedby already on the child (e.g. extra help) and add hint/error ids.
-  const existingDescribedBy =
-    typeof childProps['aria-describedby'] === 'string'
-      ? childProps['aria-describedby']
-      : undefined
   const ariaDescribedby = joinAriaDescribedby(
-    existingDescribedBy,
+    additionalAriaDescribedBy,
     describedByParts.length ? describedByParts.join(' ') : undefined
   )
 
-  // Prefer the child's id if set; otherwise use id prop or generated fieldId (matches <Label htmlFor>).
-  const mergedId = typeof childProps.id === 'string' ? childProps.id : fieldId
-  const elementRef = resolveElementRef(children)
-
-  const controlProps: Record<string, unknown> = {
-    id: mergedId,
+  const controlProps: FormFieldRenderControlProps = {
+    id: fieldId,
     'aria-describedby': ariaDescribedby,
     'aria-invalid': hasError ? true : undefined,
-    // cloneElement replaces ref — merge so the original ref still runs.
-    ref: mergeRefs(elementRef)
+    error: hasError
   }
-
-  // Custom components often accept an `error` prop for styling; DOM tags do not.
-  if (hasError && typeof children.type !== 'string') {
-    controlProps.error = true
-  }
-
-  const control = cloneElement(children, controlProps)
 
   return (
     <FormGroup {...formGroupProps} error={hasError}>
-      <Label htmlFor={mergedId}>{label}</Label>
+      <Label htmlFor={fieldId}>{label}</Label>
       {showHint ? <Hint id={hintId}>{hint}</Hint> : null}
       <ErrorMessage id={errorId}>{error}</ErrorMessage>
-      {control}
+      {renderControl(controlProps)}
     </FormGroup>
   )
 }

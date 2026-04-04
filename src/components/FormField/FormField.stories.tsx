@@ -10,7 +10,7 @@ const meta: Meta<typeof FormField> = {
   parameters: {
     docs: {
       description: {
-        component: `Wraps a single form control with a GOV.UK \`govuk-form-group\`: label, optional hint, optional error message, and the field. Pass the control as \`children\` (for example \`Input\` or \`Textarea\`) so refs stay on the leaf for libraries like React Hook Form. See [GOV.UK — Text input](https://design-system.service.gov.uk/components/text-input/) and [error state](https://design-system.service.gov.uk/components/text-input/error/).`
+        component: `Wraps a form control with a GOV.UK \`govuk-form-group\`: label, optional hint, optional error message, and the field. Use \`renderControl\` to render the input (or Textarea, etc.) and spread the provided props (including \`error\` for error styling on Input/Textarea). Refs attach in your render function (e.g. for React Hook Form). See [GOV.UK — Text input](https://design-system.service.gov.uk/components/text-input/) and [error state](https://design-system.service.gov.uk/components/text-input/error/).`
       }
     },
     design: {
@@ -28,9 +28,10 @@ export const Primary: Story = {
     label: 'What is the name of the event?'
   },
   render: (args) => (
-    <FormField {...args}>
-      <Input name="event-name" autoComplete="off" />
-    </FormField>
+    <FormField
+      {...args}
+      renderControl={(props) => <Input {...props} name="event-name" autoComplete="off" />}
+    />
   )
 }
 
@@ -66,8 +67,9 @@ export const WithTextarea: Story = {
     error: 'Enter more detail'
   },
   render: (args) => (
-    <FormField {...args}>
-      <Textarea name="details" rows={5} />
-    </FormField>
+    <FormField
+      {...args}
+      renderControl={(props) => <Textarea {...props} name="details" rows={5} />}
+    />
   )
 }

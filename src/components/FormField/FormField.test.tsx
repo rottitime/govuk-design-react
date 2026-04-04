@@ -9,9 +9,10 @@ const label = 'Event name'
 describe('FormField', () => {
   it('associates label with the control', () => {
     render(
-      <FormField label={label}>
-        <Input />
-      </FormField>
+      <FormField
+        label={label}
+        renderControl={(props) => <Input {...props} />}
+      />
     )
     const input = screen.getByLabelText(label)
     expect(input).toBeInTheDocument()
@@ -22,9 +23,11 @@ describe('FormField', () => {
   it('renders hint when provided', () => {
     const hint = 'Use the name on promotional material'
     render(
-      <FormField label={label} hint={hint}>
-        <Input />
-      </FormField>
+      <FormField
+        label={label}
+        hint={hint}
+        renderControl={(props) => <Input {...props} />}
+      />
     )
     expect(screen.getByText(hint)).toBeInTheDocument()
     const input = screen.getByLabelText(label)
@@ -37,9 +40,11 @@ describe('FormField', () => {
   it('renders error message and applies error state', () => {
     const message = 'Enter an event name'
     const { container } = render(
-      <FormField label={label} error={message}>
-        <Input />
-      </FormField>
+      <FormField
+        label={label}
+        error={message}
+        renderControl={(props) => <Input {...props} />}
+      />
     )
     expect(screen.getByText(message)).toBeInTheDocument()
     expect(container.querySelector('.govuk-form-group--error')).toBeInTheDocument()
@@ -49,11 +54,15 @@ describe('FormField', () => {
     expect(input).toHaveClass('govuk-input--error')
   })
 
-  it('merges aria-describedby with existing value', () => {
+  it('merges aria-describedby with additional ids', () => {
     render(
-      <FormField label={label} hint="Hint text" error="Error text">
-        <Input aria-describedby="extra-id" />
-      </FormField>
+      <FormField
+        label={label}
+        hint="Hint text"
+        error="Error text"
+        additionalAriaDescribedBy="extra-id"
+        renderControl={(props) => <Input {...props} />}
+      />
     )
     const input = screen.getByLabelText(label)
     const describedBy = input.getAttribute('aria-describedby')!
@@ -61,23 +70,25 @@ describe('FormField', () => {
     expect(describedBy.split(/\s+/).length).toBeGreaterThanOrEqual(3)
   })
 
-  it('forwards ref from register-style props to the DOM input', () => {
+  it('forwards ref to the DOM input', () => {
     const ref = createRef<HTMLInputElement>()
     render(
-      <FormField label={label}>
-        <Input ref={ref} />
-      </FormField>
+      <FormField
+        label={label}
+        renderControl={(props) => <Input ref={ref} {...props} />}
+      />
     )
     expect(ref.current).toBeInstanceOf(HTMLInputElement)
     expect(ref.current).toBe(screen.getByLabelText(label))
   })
 
-  it('preserves callback ref when cloning (RHF register-style)', () => {
+  it('supports callback ref on the control (RHF register-style)', () => {
     const ref = vi.fn()
     render(
-      <FormField label={label}>
-        <Input ref={ref} />
-      </FormField>
+      <FormField
+        label={label}
+        renderControl={(props) => <Input ref={ref} {...props} />}
+      />
     )
     const input = screen.getByLabelText(label)
     expect(ref).toHaveBeenCalledWith(input)
@@ -85,9 +96,11 @@ describe('FormField', () => {
 
   it('passes error styling to Textarea when in error', () => {
     render(
-      <FormField label={label} error="Too long">
-        <Textarea />
-      </FormField>
+      <FormField
+        label={label}
+        error="Too long"
+        renderControl={(props) => <Textarea {...props} />}
+      />
     )
     expect(screen.getByLabelText(label)).toHaveClass('govuk-textarea--error')
   })

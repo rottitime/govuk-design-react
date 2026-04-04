@@ -3,6 +3,7 @@ import Hint from '@/components/Hint/Hint'
 import Label from '@/components/Label/Label'
 import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
 import { useId, type ComponentProps, type ReactNode } from 'react'
+import { cx } from '@/utils/string.utils'
 
 type FormGroupProps = ComponentProps<typeof FormGroup>
 
@@ -25,22 +26,6 @@ type Props = Omit<FormGroupProps, 'children' | 'error'> & {
   renderControl: (props: FormFieldRenderControlProps) => ReactNode
 }
 
-/** Combines several aria-describedby values into one string, without duplicate ids. */
-function joinAriaDescribedby(...parts: (string | undefined)[]): string | undefined {
-  const seen = new Set<string>()
-  const ids: string[] = []
-  for (const part of parts) {
-    if (!part?.trim()) continue
-    for (const id of part.trim().split(/\s+/)) {
-      if (id && !seen.has(id)) {
-        seen.add(id)
-        ids.push(id)
-      }
-    }
-  }
-  return ids.length ? ids.join(' ') : undefined
-}
-
 /**
  * Wraps one form control with label, optional hint, and optional error (GOV.UK pattern).
  * Wires id, aria-describedby, and aria-invalid so screen readers link the control to hint/error.
@@ -59,27 +44,26 @@ export default function FormField({
   const hintId = `${uid}hint`
   const errorId = `${uid}error`
 
-  const hasError = Boolean(error)
-  const showHint = Boolean(hint)
+  const hasError = !!error,
+    showHint = !!hint
 
   const describedByParts: string[] = []
   if (showHint) describedByParts.push(hintId)
   if (hasError) describedByParts.push(errorId)
 
-  const ariaDescribedby = joinAriaDescribedby(
-    additionalAriaDescribedBy,
-    describedByParts.length ? describedByParts.join(' ') : undefined
-  )
-
   const controlProps: FormFieldRenderControlProps = {
     id: fieldId,
-    'aria-describedby': ariaDescribedby,
+    'aria-describedby': cx(
+      additionalAriaDescribedBy,
+      describedByParts.length ? describedByParts.join(' ') : undefined
+    ),
     'aria-invalid': hasError ? true : undefined,
     error: hasError
   }
 
   return (
     <FormGroup {...formGroupProps} error={hasError}>
+      dekijdejiode
       <Label htmlFor={fieldId}>{label}</Label>
       {showHint ? <Hint id={hintId}>{hint}</Hint> : null}
       <ErrorMessage id={errorId}>{error}</ErrorMessage>

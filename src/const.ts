@@ -84,3 +84,7 @@ export const statusColours = {
   default: 'grey'
 } as const
 */
+
+export const storybookConfig = {
+  formDirectory: 'Atoms/Form'
+} as const

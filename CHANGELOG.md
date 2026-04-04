@@ -1,5 +1,12 @@
 # @rottitime/govuk-design-react
 
+## 0.14.1
+
+### Patch Changes
+
+- eca3f55: Storybook update
+- a1f171f: Heading component updated
+
 ## 0.14.0
 
 ### Minor Changes

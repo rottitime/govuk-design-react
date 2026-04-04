@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import FormGroup from '../FormGroup/FormGroup'
 import Date from './Date'
 import type { ComponentProps } from 'react'
 import { fn } from 'storybook/test'
@@ -55,4 +56,22 @@ export const Error: Story = {
     ...Primary,
     error: true
   }
+}
+
+export const WithLabelHintAndError: Story = {
+  name: 'With label, hint and error (FormGroup)',
+  args: {
+    format: 'dd/mm/yyyy' as Format,
+    onChange: fn()
+  },
+  render: ({ format, onChange }) => (
+    <FormGroup
+      label="When is your passport due to expire?"
+      hint="For example, 27 3 2040"
+      error="Enter the expiry date"
+      renderControl={(props) => (
+        <Date {...Primary.args} {...props} format={format} onChange={onChange} />
+      )}
+    />
+  )
 }

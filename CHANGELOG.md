@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.14.2
+
+### Patch Changes
+
+- 334fa18: FormGroup component with error, label handling
+
 ## 0.14.1
 
 ### Patch Changes

@@ -28,4 +28,12 @@ describe('cx', () => {
       'govuk-input custom govuk-input--error'
     )
   })
+
+  it('removes duplicate tokens', () => {
+    expect(cx('a', 'a', 'b')).toBe('a b')
+  })
+
+  it('removes duplicates across arguments and inside strings', () => {
+    expect(cx('govuk-input', 'govuk-input foo')).toBe('govuk-input foo')
+  })
 })

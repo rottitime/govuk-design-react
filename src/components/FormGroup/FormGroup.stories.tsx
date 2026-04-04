@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import FormGroup from './FormGroup'
 import Input from '../Input/Input'
-import Label from '../Label/Label'
 import Textarea from '../Textarea/Textarea'
 
 const meta: Meta<typeof FormGroup> = {
@@ -11,7 +10,7 @@ const meta: Meta<typeof FormGroup> = {
   parameters: {
     docs: {
       description: {
-        component: `GOV.UK \`govuk-form-group\` wrapper. Use **children only** for manual label + input layout, or **\`renderControl\`** with \`label\` (and optional \`hint\`, \`error\`) for the full accessible field pattern. Spread the props from \`renderControl\` onto Input/Textarea. \`FormField\` is the same component, exported for backward compatibility. See [text input](https://design-system.service.gov.uk/components/text-input/) and [error state](https://design-system.service.gov.uk/components/text-input/error/).`
+        component: `GOV.UK \`govuk-form-group\` wrapper. Use **\`renderControl\`** with \`label\` (and optional \`hint\`, \`error\`) for the accessible field pattern, spreading the props from \`renderControl\` onto Input/Textarea. Use **children** for fully custom markup inside the group. \`FormField\` is the same component, exported for backward compatibility. See [text input](https://design-system.service.gov.uk/components/text-input/) and [error state](https://design-system.service.gov.uk/components/text-input/error/).`
       }
     },
     design: {
@@ -24,85 +23,60 @@ const meta: Meta<typeof FormGroup> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const idInput = 'test-input'
-
-export const WrapperWithLabelAndInput: Story = {
+export const Primary: Story = {
   name: 'Wrapper (manual label + input)',
   args: {
-    children: (
-      <>
-        <Label htmlFor={idInput}>What is the name of the event?</Label>
-        <Input id={idInput} />
-      </>
-    )
+    label: 'What is the name of the event?',
+    renderControl: (props) => <Input {...props} name="event-name" autoComplete="off" />
   }
 }
 
 export const WrapperWithError: Story = {
   name: 'Wrapper with error styling',
   args: {
-    error: true,
-    children: (
-      <>
-        <Label htmlFor={idInput}>What is the name of the event?</Label>
-        <Input error id={idInput} />
-      </>
-    )
+    ...Primary.args,
+    error: true
   }
 }
 
 export const FieldPrimary: Story = {
-  name: 'Field — primary',
+  name: 'Field - primary',
   args: {
-    label: 'What is the name of the event?'
-  },
-  render: (args) => (
-    <FormGroup
-      {...args}
-      renderControl={(props) => <Input {...props} name="event-name" autoComplete="off" />}
-    />
-  )
+    ...Primary.args
+  }
 }
 
 export const FieldWithHint: Story = {
-  name: 'Field — with hint',
+  name: 'Field - with hint',
   args: {
-    ...FieldPrimary.args,
-    hint: 'The name you’ll use on promotional material'
-  },
-  render: FieldPrimary.render
+    ...Primary.args,
+    hint: "The name you'll use on promotional material"
+  }
 }
 
 export const FieldWithError: Story = {
-  name: 'Field — with error',
+  name: 'Field - with error',
   args: {
-    ...FieldPrimary.args,
+    ...Primary.args,
     error: 'Enter an event name'
-  },
-  render: FieldPrimary.render
+  }
 }
 
 export const FieldHintAndError: Story = {
-  name: 'Field — hint and error',
+  name: 'Field - hint and error',
   args: {
-    ...FieldPrimary.args,
-    hint: 'The name you’ll use on promotional material',
+    ...Primary.args,
+    hint: "The name you'll use on promotional material",
     error: 'Enter an event name'
-  },
-  render: FieldPrimary.render
+  }
 }
 
 export const FieldWithTextarea: Story = {
-  name: 'Field — textarea',
+  name: 'Field - textarea',
   args: {
     label: 'Can you provide more detail?',
     hint: 'Do not include personal or financial information.',
-    error: 'Enter more detail'
-  },
-  render: (args) => (
-    <FormGroup
-      {...args}
-      renderControl={(props) => <Textarea {...props} name="details" rows={5} />}
-    />
-  )
+    error: 'Enter more detail',
+    renderControl: (args) => <Textarea {...args} name="details" rows={5} />
+  }
 }

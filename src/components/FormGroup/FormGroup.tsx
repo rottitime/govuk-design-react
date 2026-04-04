@@ -3,7 +3,7 @@ import Hint from '@/components/Hint/Hint'
 import Label from '@/components/Label/Label'
 import { cx } from '@/utils/string.utils'
 import { useId } from 'react'
-import type { FormGroupRenderControlProps, Props } from './type'
+import type { FormGroupRenderControlProps, Props } from './types'
 
 export default function FormGroup({
   error,

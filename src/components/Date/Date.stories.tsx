@@ -6,7 +6,7 @@ import { fn } from 'storybook/test'
 type Format = ComponentProps<typeof Date>['format']
 
 const meta: Meta<typeof Date> = {
-  title: 'Atoms/Date',
+  title: 'Atoms/Form/Date',
   component: Date,
   tags: ['autodocs'],
 

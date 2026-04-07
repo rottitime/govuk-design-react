@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import Link from './Link'
-import { fn } from 'storybook/test'
-import { action } from 'storybook/actions'
 
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
@@ -24,6 +22,10 @@ export const Primary: Story = {
   args: {
     children: 'Example Link',
     href: '/?path=/story/atoms-link--primary'
+    // onClick: (e) => {
+    //   e.preventDefault()
+    //   fn()(e)
+    // }
   }
 }
 

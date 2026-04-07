@@ -14,7 +14,7 @@ export default function Link({
   ...props
 }: Props) {
   const { href } = props
-  const classes = [button ? 'govuk-button' : 'govuk-link'].join('')
+  const classes = cx([button ? 'govuk-button' : 'govuk-link', className])
   const linkProps: Anchor = {
     className: classes,
     role: button ? 'button' : undefined,
@@ -22,11 +22,7 @@ export default function Link({
   }
   if (isExternalUrl(href)) {
     return (
-      <Component
-        {...linkProps}
-        rel={linkProps.rel ?? 'noopener noreferrer'}
-        className={cx(['govuk-link', className])}
-      >
+      <Component {...linkProps} rel={linkProps.rel ?? 'noopener noreferrer'}>
         {children}
       </Component>
     )

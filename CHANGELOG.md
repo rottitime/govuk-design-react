@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.14.3
+
+### Patch Changes
+
+- 64cc60a: New Select component
+
 ## 0.14.2
 
 ### Patch Changes

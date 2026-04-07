@@ -13,6 +13,9 @@ type Props = {
   value?: string
   separator?: string
   error?: boolean
+  /** First segment only; use with FormGroup `renderControl` (e.g. `aria-describedby`). */
+  'aria-describedby'?: string
+  'aria-invalid'?: boolean | 'true' | 'false'
 }
 
 export default function Date({
@@ -22,7 +25,9 @@ export default function Date({
   value,
   separator = '/',
   onChange,
-  error
+  error,
+  'aria-describedby': ariaDescribedBy,
+  'aria-invalid': ariaInvalid
 }: Props) {
   const id = useId()
 
@@ -56,6 +61,8 @@ export default function Date({
             characters={digit.length > 2 ? 4 : 2}
             error={!!error}
             id={idInput}
+            aria-describedby={index === 0 ? ariaDescribedBy : undefined}
+            aria-invalid={index === 0 ? ariaInvalid : undefined}
             aria-label={hideLabels ? label : undefined}
             name={digit}
             type="text"

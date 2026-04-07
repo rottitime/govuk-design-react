@@ -1,6 +1,13 @@
 export { default as Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs'
 export { default as Button } from '@/components/Button/Button'
 export { default as Caption } from '@/components/Caption/Caption'
+export { default as Checkboxes } from '@/components/Checkboxes/Checkboxes'
+export type { CheckboxesProps } from '@/components/Checkboxes/Checkboxes'
+export type {
+  CheckboxesDivider,
+  CheckboxesItem,
+  CheckboxesOption
+} from '@/components/Checkboxes/types'
 export { default as CssBaseline } from '@/components/CssBaseline/CssBaseline'
 export { default as Date } from '@/components/Date/Date'
 export { default as Details } from '@/components/Details/Details'

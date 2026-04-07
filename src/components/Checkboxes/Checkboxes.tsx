@@ -3,6 +3,7 @@ import Hint from '@/components/Hint/Hint'
 import { cx } from '@/utils/string.utils'
 import { Fragment, useId, useRef, type ChangeEvent, type ComponentProps } from 'react'
 import { isCheckboxesDivider, type CheckboxesItem, type CheckboxesOption } from './types'
+import './Checkboxes.module.css'
 
 export type CheckboxesProps = Omit<ComponentProps<'div'>, 'children'> & {
   /** Shared `name` for all checkboxes; omit per-item only when an option sets `name`. */
@@ -118,7 +119,9 @@ export default function Checkboxes({
             const inputName = option.name ?? groupName
             const hintTextId = optionHintId(option)
             const hasItemHint = option.hint != null && option.hint !== ''
-            const panelId = option.conditional ? (option.conditionalId ?? `conditional-${option.id}`) : undefined
+            const panelId = option.conditional
+              ? (option.conditionalId ?? `conditional-${option.id}`)
+              : undefined
             const showPanel = option.conditional && conditionalPanelVisible(option)
 
             const {
@@ -143,7 +146,7 @@ export default function Checkboxes({
 
             return (
               <Fragment key={id}>
-                <div className="govuk-checkboxes__item">
+                <div className={cx('govuk-checkboxes__item')}>
                   <input
                     {...inputRest}
                     className={cx('govuk-checkboxes__input', inputClassName)}

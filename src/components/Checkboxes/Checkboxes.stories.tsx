@@ -20,7 +20,7 @@ const meta: Meta<typeof Checkboxes> = {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=18169-10191&t=Ekuef8ZeLj0nwMCe-0'
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=15143-3074&t=pfzcuI4xJC2J3GAy-0'
     }
   },
   args: {
@@ -127,9 +127,21 @@ export const WithDividerAndExclusiveNone: Story = {
     legend: 'Which types of waste do you transport regularly?',
     name: 'with-divider-and-none',
     items: [
-      { id: 'with-divider-and-none', label: 'Waste from animal carcasses', value: 'animal' },
-      { id: 'with-divider-and-none-2', label: 'Waste from mines or quarries', value: 'mines' },
-      { id: 'with-divider-and-none-3', label: 'Farm or agricultural waste', value: 'farm' },
+      {
+        id: 'with-divider-and-none',
+        label: 'Waste from animal carcasses',
+        value: 'animal'
+      },
+      {
+        id: 'with-divider-and-none-2',
+        label: 'Waste from mines or quarries',
+        value: 'mines'
+      },
+      {
+        id: 'with-divider-and-none-3',
+        label: 'Farm or agricultural waste',
+        value: 'farm'
+      },
       { divider: true, text: 'or' },
       {
         id: 'with-divider-and-none-5',

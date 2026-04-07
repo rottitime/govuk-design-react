@@ -11,7 +11,7 @@ const Select = forwardRef<HTMLSelectElement, Props>(
     return (
       <select
         ref={ref}
-        className={cx('govuk-select', className, !!error && `govuk-input--error`)}
+        className={cx('govuk-select', className, !!error && 'govuk-select--error')}
         {...props}
       >
         {options.map((option) => (

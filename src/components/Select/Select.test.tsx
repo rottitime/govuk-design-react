@@ -24,7 +24,7 @@ describe('Select', () => {
 
   it('applies error class when error prop is true', () => {
     render(<Select options={options} error aria-label="Test" />)
-    expect(screen.getByRole('combobox')).toHaveClass('govuk-input--error')
+    expect(screen.getByRole('combobox')).toHaveClass('govuk-select--error')
   })
 
   it('merges custom className', () => {
@@ -40,7 +40,12 @@ describe('Select', () => {
 
   it('passes through native select attributes', () => {
     render(
-      <Select options={options} name="country" id="country-select" data-testid="country-select" />
+      <Select
+        options={options}
+        name="country"
+        id="country-select"
+        data-testid="country-select"
+      />
     )
     const select = screen.getByTestId('country-select')
     expect(select).toHaveAttribute('name', 'country')

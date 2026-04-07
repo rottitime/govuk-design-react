@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.14.4
+
+### Patch Changes
+
+- 937dcb6: Checkbox component
+
 ## 0.14.3
 
 ### Patch Changes

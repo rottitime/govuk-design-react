@@ -21,12 +21,7 @@ const label = 'Event name'
 
 describe('FormGroup (field)', () => {
   it('associates label with the control', () => {
-    render(
-      <FormGroup
-        label={label}
-        renderControl={(props) => <Input {...props} />}
-      />
-    )
+    render(<FormGroup label={label} renderControl={(props) => <Input {...props} />} />)
     const input = screen.getByLabelText(label)
     expect(input).toBeInTheDocument()
     expect(input).toHaveAttribute('id')

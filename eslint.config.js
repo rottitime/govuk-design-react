@@ -14,7 +14,15 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 export default defineConfig([
   // Include .storybook directory for linting (per Storybook eslint-plugin docs)
   globalIgnores(['!.storybook'], 'Include Storybook Directory'),
-  { ignores: ['dist/**', 'coverage/**', '.prettierrc.*', '.storybook/static/**'] },
+  {
+    ignores: [
+      'dist/**',
+      'coverage/**',
+      '.prettierrc.*',
+      '.storybook/static/**',
+      'storybook-static/**'
+    ]
+  },
 
   js.configs.recommended,
   ...tseslint.configs.recommended,

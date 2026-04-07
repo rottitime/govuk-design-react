@@ -1,8 +1,1 @@
-/* .govuk-checkboxes__item:has(input[type='checkbox']) + .govuk-checkboxes__conditional {
-  display: none;
-}
-
-.govuk-checkboxes__item:has(input[type='checkbox']:checked)
-  + .govuk-checkboxes__conditional {
-  display: block;
-} */
+/* for overriding any css from from govuk-frontend */

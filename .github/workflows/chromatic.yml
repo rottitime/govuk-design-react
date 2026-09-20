@@ -9,6 +9,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
       - name: Install dependencies
         # ⚠️ Pick one of these, matching the package manager for your project
         run: npm ci

@@ -1,11 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import path from 'path';
-import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
-
-const dirname =
-  typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // Two projects so the Storybook addon finds "storybook" and npm run test can run only "unit".
 // See: https://storybook.js.org/docs/writing-tests/integrations/vitest-addon
@@ -27,7 +23,7 @@ export default defineConfig({
         extends: true,
         plugins: [
           storybookTest({
-            configDir: path.join(dirname, '.storybook'),
+            configDir: path.join(import.meta.dirname, '.storybook'),
             storybookScript: 'npm run storybook -- --no-open',
           }),
         ],
@@ -46,7 +42,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
 });

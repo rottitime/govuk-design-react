@@ -33,7 +33,11 @@ export const Inverse: Story = {
     inverse: true,
     children: 'Back'
   },
-  parameters: {
-    backgrounds: { default: 'dark' }
-  }
+  decorators: [
+    (Story) => (
+      <div style={{ background: '#0b0c0c', padding: '20px' }}>
+        <Story />
+      </div>
+    )
+  ]
 }

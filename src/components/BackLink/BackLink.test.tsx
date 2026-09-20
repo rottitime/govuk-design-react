@@ -10,7 +10,9 @@ describe('BackLink', () => {
 
   it('applies the correct CSS class', () => {
     render(<BackLink />)
-    expect(screen.getByRole('link')).toHaveClass('govuk-back-link')
+    const link = screen.getByRole('link')
+    expect(link).toHaveClass('govuk-back-link')
+    expect(link).not.toHaveClass('govuk-link')
   })
 
   it('supports custom children and href', () => {
@@ -35,5 +37,14 @@ describe('BackLink', () => {
     )
     const link = screen.getByTestId('back')
     expect(link).toHaveClass('govuk-back-link', 'custom-class')
+    expect(link).not.toHaveClass('govuk-link')
+  })
+
+  it('reuses Link so external hrefs get rel="noopener noreferrer"', () => {
+    render(<BackLink href="https://example.com">Back</BackLink>)
+    expect(screen.getByRole('link', { name: 'Back' })).toHaveAttribute(
+      'rel',
+      'noopener noreferrer'
+    )
   })
 })

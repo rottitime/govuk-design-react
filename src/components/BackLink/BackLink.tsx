@@ -1,5 +1,6 @@
 // https://design-system.service.gov.uk/components/back-link/
 
+import Link from '@/components/Link/Link'
 import { cx } from '@/utils/string.utils'
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -19,12 +20,13 @@ export default function BackLink({
   ...props
 }: Props) {
   return (
-    <a
+    <Link
+      unstyled
       className={cx('govuk-back-link', inverse && 'govuk-back-link--inverse', className)}
       href={href}
       {...props}
     >
       {children}
-    </a>
+    </Link>
   )
 }

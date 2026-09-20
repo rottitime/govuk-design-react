@@ -1,0 +1,114 @@
+---
+description: Conventions for building, testing and documenting GOV.UK Design System React components in this library
+globs: src/**/*.tsx,src/**/*.ts,lib/main.ts
+alwaysApply: true
+---
+
+# GOV.UK Design React — component development
+
+This library ports [GOV.UK Design System](https://design-system.service.gov.uk/)
+components to React. Every new component MUST match the GOV.UK Frontend markup and
+CSS classes so that the official `govuk-frontend` stylesheet styles it correctly.
+
+## Anatomy of a component
+
+Each component lives in its own folder under `src/components/<Name>/` and ships four
+things:
+
+- `<Name>.tsx` — the component (default export).
+- `<Name>.test.tsx` — Vitest + `@testing-library/react` tests.
+- `<Name>.stories.tsx` — Storybook stories with `autodocs`.
+- `types.ts` — only when prop/model types are non-trivial (see `Checkboxes`).
+
+### Component file
+
+- Use a **default export** function component: `export default function Name(props: Props) { ... }`.
+- Start the file with a comment linking the GOV.UK page, e.g.
+  `// https://design-system.service.gov.uk/components/warning-text/`.
+- Type props as `type Props = { ... } & ComponentProps<'element'>` and spread the
+  remaining native props (`{...props}`) onto the root element so consumers can pass
+  `id`, `data-*`, `aria-*`, etc.
+- Accept and merge `className`. Always merge with the `cx` helper from
+  `@/utils/string.utils` — never hand-roll template-string class joining:
+  `className={cx('govuk-warning-text', className)}`.
+- Reuse the exact `govuk-*` class names and DOM structure from GOV.UK Frontend.
+  When in doubt, mirror the HTML shown on the component's design-system page.
+- Reuse existing building blocks instead of duplicating markup: `Label`, `Hint`,
+  `ErrorMessage`, `FormGroup`, `Icon`, etc.
+- Generate ids with React's `useId()` when a component needs to wire
+  `aria-describedby`/`htmlFor` and the consumer did not supply an `id`.
+- Prefer shared constants from `@/const` and `@/components/constants` (sizes,
+  colours, layout, tag colours) over magic strings.
+
+### Path aliases
+
+Import via the `@/*` alias (maps to `src/*`), e.g. `@/utils/string.utils`,
+`@/components/Hint/Hint`, `@/const`. Do not use long relative `../../` chains.
+
+### Accessibility
+
+Accessibility is a first-class requirement (the `@storybook/addon-a11y` addon runs
+in Storybook). Use semantic HTML, correct roles, `visually-hidden` text where GOV.UK
+does, and associate labels/hints/errors with inputs via `htmlFor`/`aria-describedby`.
+
+## Tests (`<Name>.test.tsx`)
+
+Cover at least: renders children/content, applies the correct root `govuk-*` class,
+merges a custom `className`, forwards extra props (e.g. `data-testid`), and any
+component-specific behaviour (variants, interactions, error/hint wiring). Query by
+role/label/text (`@testing-library/react`) rather than test ids where possible.
+
+## Stories (`<Name>.stories.tsx`)
+
+- `title` follows the existing taxonomy: form controls use `Atoms/Form/<Name>`,
+  other atoms use `Atoms/<Name>`, type/layout primitives use `Foundation/<Name>`.
+  Add a new top-level group (e.g. `Molecules/`) only when nothing fits.
+- Add `tags: ['autodocs']` and a `parameters.docs.description.component` that links
+  the GOV.UK page. Include a `parameters.design` Figma link when available.
+- Provide a `Default`/`Primary` story plus stories for the key variants and states.
+
+## Wiring a component into the library
+
+1. Export it (and any public types) from `lib/main.ts`, keeping the list alphabetised
+   and matching the existing `export { default as Name } from '@/components/Name/Name'`
+   / `export type { ... }` style.
+2. Add a Changeset describing the change: create a file under `.changeset/` (e.g.
+   `.changeset/<name>.md`) with `@rottitime/govuk-design-react` bumped `minor` for a
+   new component (or `patch` for a fix). Example:
+
+   ```md
+   ---
+   '@rottitime/govuk-design-react': minor
+   ---
+
+   Add `WarningText` component
+   ```
+
+## Before opening a PR
+
+Run and pass, using Node 24 (`nvm use 24`):
+
+- `npm run lint` — `tsc` + ESLint with `--max-warnings 0` (warnings fail).
+- `npm run test:unit -- --run` — all Vitest unit tests.
+- `npm run build` — the library build (`tsc && vite build`).
+
+Prefer verifying the component visually in Storybook (`npm run storybook`) too.
+
+## Pull requests per issue
+
+- One component (issue) per branch and PR. Reference the issue in the PR body
+  (e.g. `Closes #88`).
+- Keep PRs focused; do not bundle unrelated components together.
+
+## Responding to code-review feedback
+
+When a reviewer leaves a comment on a PR:
+
+1. **Apply it to the code.** Update the component/tests/stories to address the
+   specific comment, then re-run lint, unit tests and build before pushing.
+2. **Promote durable feedback into the rules.** If a comment expresses a
+   *long-term, repeatable* preference (a convention, naming rule, a11y requirement,
+   testing expectation, API-shape preference, etc.) rather than a one-off fix, update
+   this rule file (or add a new rule under `.cursor/rules/`) in the same change so the
+   convention is captured for every future component. Call out the rule update in the
+   PR discussion so the reviewer can confirm it.

@@ -28,7 +28,7 @@ This repository contains the `govuk-design-react` component library. Contributor
 
 ## Composition and Flexibility
 - Components should be **easy for developers to use and flexible**. Do not hard-code copy, links, or other consumer content; pass it through props or `children`.
-- **Reuse existing library components** instead of raw HTML when a wrapper already exists. For example use `<P>` instead of `<p>`, not a new paragraph primitive.
+- **Reuse existing library components** instead of raw HTML when a wrapper already exists. For example use `<P>` instead of `<p>`, and `<Link>` instead of a raw `<a>`.
 - If an existing component is almost right but not composable enough, **upgrade it** with a clean, backwards-compatible change rather than forking or duplicating it.
 
 ## Exports

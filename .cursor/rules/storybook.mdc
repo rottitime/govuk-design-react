@@ -1,0 +1,26 @@
+---
+description: Storybook stories aligned with the GOV.UK Design System Community Figma
+globs: "**/*.stories.tsx"
+alwaysApply: false
+---
+
+# Storybook
+
+Every component must have stories covering states, variations, and edge cases. Document props, usage, and accessibility in autodocs.
+
+Align reference designs with the [GOV.UK Design System – Community Figma](https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=23-233). Use `parameters.design` with the matching Figma URL:
+
+```ts
+const meta: Meta<typeof Heading> = {
+  title: 'Foundation/Headings',
+  component: Heading,
+  tags: ['autodocs'],
+  parameters: {
+    docs: { description: { component: '...' } },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=484-9'
+    }
+  }
+}
+```

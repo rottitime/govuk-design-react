@@ -1,0 +1,13 @@
+---
+description: Add a Changeset for library releases
+alwaysApply: true
+---
+
+# Versioning (Changesets)
+
+When the change includes library or publishable code, add a changeset as described in `DEPLOYMENT.md`:
+
+- There must be a new or updated file under `.changeset/*.md`.
+- Run `npm run changeset`, choose `patch` / `minor` / `major` (or `none` for docs-only / non-release work), add a summary, and commit the generated file with the change.
+
+Docs-only or CI/config work may use bump type `none`. Any user-facing library change needs a real bump type and a committed changeset file.

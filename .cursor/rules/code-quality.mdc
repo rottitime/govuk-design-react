@@ -1,0 +1,12 @@
+---
+description: Core code quality standards for govuk-design-react
+alwaysApply: true
+---
+
+# Code Quality
+
+- Match existing style. Introduce no ESLint or TypeScript errors (`npm run lint` runs `tsc` plus ESLint with `--max-warnings 0`).
+- Prefer functional components, existing utilities (for example `insertIf`), and GOV.UK class names over custom CSS.
+- Reduce and simplify: avoid duplication, remove dead code, and keep components and utilities minimal.
+
+When generating code, prioritize correct TypeScript types, testable components, and small diffs. Do not skip tests or Storybook for new or changed UI.

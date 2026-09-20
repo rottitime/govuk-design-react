@@ -4,17 +4,30 @@ import { cx, isExternalUrl } from '@/utils/string.utils'
 import type { ComponentProps, ElementType } from 'react'
 
 type Anchor = ComponentProps<'a'>
-type Props = { href: string; button?: boolean; Component?: ElementType } & Anchor
+type Props = {
+  href: string
+  button?: boolean
+  /**
+   * Skip the default `govuk-link` / `govuk-button` class so a specialised
+   * GOV.UK link class can be applied instead (e.g. `govuk-back-link`).
+   */
+  unstyled?: boolean
+  Component?: ElementType
+} & Anchor
 
 export default function Link({
   button,
+  unstyled,
   children,
   className,
   Component = 'a',
   ...props
 }: Props) {
   const { href } = props
-  const classes = cx([button ? 'govuk-button' : 'govuk-link', className])
+  const classes = cx([
+    !unstyled && (button ? 'govuk-button' : 'govuk-link'),
+    className
+  ])
   const linkProps: Anchor = {
     className: classes,
     role: button ? 'button' : undefined,

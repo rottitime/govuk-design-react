@@ -26,6 +26,11 @@ This repository contains the `govuk-design-react` component library. Contributor
 - Stories should cover different component states, variations, and edge cases.
 - Ensure the documentation clearly explains **props, usage, and accessibility features**.
 
+## Composition and Flexibility
+- Components should be **easy for developers to use and flexible**. Do not hard-code copy, links, or other consumer content; pass it through props or `children`.
+- **Reuse existing library components** instead of raw HTML when a wrapper already exists. For example use `<P>` instead of `<p>`, not a new paragraph primitive.
+- If an existing component is almost right but not composable enough, **upgrade it** with a clean, backwards-compatible change rather than forking or duplicating it.
+
 ## Exports
 - Any new or updated components **must be exported** in the main library file:
   [lib/main.ts](https://github.com/rottitime/govuk-design-react/blob/main/lib/main.ts)

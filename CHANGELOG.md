@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.14.5
+
+### Patch Changes
+
+- e090355: Update of gov design system
+
 ## 0.14.4
 
 ### Patch Changes

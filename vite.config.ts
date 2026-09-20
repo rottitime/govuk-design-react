@@ -9,18 +9,32 @@ import libCss from 'vite-plugin-libcss'
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(import.meta.dirname, 'src')
+    }
+  },
+  // govuk-frontend.min.css still ships an old IE `@media screen\0` hack.
+  css: {
+    lightningcss: {
+      errorRecovery: true
     }
   },
   plugins: [dts({ include: ['lib', 'src'] }), libCss()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'lib/main.ts'),
+      entry: path.resolve(import.meta.dirname, 'lib/main.ts'),
       name: '@rottitime/govuk-design-react',
       fileName: (format) => `main.${format}.js`
     },
-    rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime']
+    rolldownOptions: {
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime',
+          'react/jsx-dev-runtime': 'jsxDevRuntime'
+        }
+      }
     },
     sourcemap: true,
     emptyOutDir: true

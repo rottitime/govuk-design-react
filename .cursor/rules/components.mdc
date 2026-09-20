@@ -1,0 +1,30 @@
+---
+description: Component composition, flexibility, testing, exports, accessibility, and GOV.UK compliance
+globs: src/components/**/*.{ts,tsx}, src/utils/**/*.{ts,tsx}, lib/main.ts
+alwaysApply: false
+---
+
+# Components
+
+## Composition and flexibility
+
+- Keep components easy to use and flexible. Do not hard-code copy, links, or other consumer content; pass it through props or `children`.
+- Reuse existing library components instead of raw HTML when a wrapper already exists. For example use `<P>` instead of `<p>`, not a new paragraph primitive.
+- If an existing component is almost right but not composable enough, upgrade it with a clean, backwards-compatible change rather than forking or duplicating it.
+
+## Testing
+
+Colocate Vitest + Testing Library tests as `ComponentName.test.tsx` (or `*.test.ts` for utilities). Cover props, events, interactions, edge cases, and accessibility behaviour. Prefer accessible queries such as `getByRole`.
+
+## Exports
+
+Export new or updated components and their public types from `lib/main.ts`.
+
+```ts
+export { default as Heading } from '@/components/Heading/Heading'
+export type { HeadingProps } from '@/components/Heading/Heading'
+```
+
+## Accessibility and GOV.UK
+
+Follow [GOV.UK Design System](https://design-system.service.gov.uk/) for content, behaviour, and interaction. Meet a11y standards: ARIA where appropriate, keyboard access, and screen-reader compatibility. Use official GOV.UK classes and patterns; do not invent parallel styling.

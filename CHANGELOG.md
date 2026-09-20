@@ -1,5 +1,11 @@
 # @rottitime/govuk-design-react
 
+## 0.14.6
+
+### Patch Changes
+
+- bb3be19: Update outdated npm packages and keep the library build working with Vite 8.
+
 ## 0.14.5
 
 ### Patch Changes

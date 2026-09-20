@@ -12,6 +12,7 @@ const meta: Meta<typeof Link> = {
       }
     }
   }
+  // args: { onClick: fn() }
 }
 
 export default meta
@@ -20,7 +21,11 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     children: 'Example Link',
-    href: '/?path=/docs/link--docs'
+    href: '/?path=/story/atoms-link--primary'
+    // onClick: (e) => {
+    //   e.preventDefault()
+    //   fn()(e)
+    // }
   }
 }
 

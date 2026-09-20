@@ -1,14 +1,20 @@
 // https://design-system.service.gov.uk/styles/links/
 
-import { isExternalUrl } from '@/utils/string.utils'
-import type { ComponentProps } from 'react'
+import { cx, isExternalUrl } from '@/utils/string.utils'
+import type { ComponentProps, ElementType } from 'react'
 
 type Anchor = ComponentProps<'a'>
-type Props = Anchor & { href: string; button?: boolean }
+type Props = { href: string; button?: boolean; Component?: ElementType } & Anchor
 
-export default function Link({ button, children, ...props }: Props) {
+export default function Link({
+  button,
+  children,
+  className,
+  Component = 'a',
+  ...props
+}: Props) {
   const { href } = props
-  const classes = [button ? 'govuk-button' : 'govuk-link'].join('')
+  const classes = cx([button ? 'govuk-button' : 'govuk-link', className])
   const linkProps: Anchor = {
     className: classes,
     role: button ? 'button' : undefined,
@@ -16,9 +22,9 @@ export default function Link({ button, children, ...props }: Props) {
   }
   if (isExternalUrl(href)) {
     return (
-      <a {...linkProps} rel={linkProps.rel ?? 'noopener noreferrer'}>
+      <Component {...linkProps} rel={linkProps.rel ?? 'noopener noreferrer'}>
         {children}
-      </a>
+      </Component>
     )
   }
   return <a {...linkProps}>{children}</a>

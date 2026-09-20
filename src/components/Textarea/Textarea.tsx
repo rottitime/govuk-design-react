@@ -1,13 +1,20 @@
+import { insertIf } from '@/utils/array.utils'
 import { forwardRef, type HTMLProps } from 'react'
 
-type Props = HTMLProps<HTMLTextAreaElement>
+type Props = { error?: boolean } & HTMLProps<HTMLTextAreaElement>
 
 const Textarea = forwardRef<HTMLTextAreaElement, Props>(
-  ({ className, ...props }, ref) => (
+  ({ className, error, ...props }, ref) => (
     <textarea
       {...props}
       ref={ref}
-      className={`govuk-textarea ${className || ''}`.trim()}
+      className={[
+        'govuk-textarea',
+        ...insertIf(!!error, 'govuk-textarea--error'),
+        ...insertIf(!!className, className)
+      ]
+        .join(' ')
+        .trim()}
     />
   )
 )

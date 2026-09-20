@@ -2,6 +2,13 @@ export { default as BackLink } from '@/components/BackLink/BackLink'
 export { default as Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs'
 export { default as Button } from '@/components/Button/Button'
 export { default as Caption } from '@/components/Caption/Caption'
+export { default as Checkboxes } from '@/components/Checkboxes/Checkboxes'
+export type { CheckboxesProps } from '@/components/Checkboxes/Checkboxes'
+export type {
+  CheckboxesDivider,
+  CheckboxesItem,
+  CheckboxesOption
+} from '@/components/Checkboxes/types'
 export { default as CssBaseline } from '@/components/CssBaseline/CssBaseline'
 export { default as Date } from '@/components/Date/Date'
 export { default as Details } from '@/components/Details/Details'
@@ -15,6 +22,7 @@ export { default as Icon } from '@/components/Icon/Icon'
 export { default as Crest } from '@/components/Icon/icons/Crest'
 export { default as CrownLogo } from '@/components/Icon/icons/CrownLogo'
 export { default as CrownLogoQueen } from '@/components/Icon/icons/CrownLogoQueen'
+export { default as PhaseBanner } from '@/components/PhaseBanner/PhaseBanner'
 export { default as Search } from '@/components/Icon/icons/Search'
 export { default as HR } from '@/components/HR/HR'
 export { default as Input } from '@/components/Input/Input'

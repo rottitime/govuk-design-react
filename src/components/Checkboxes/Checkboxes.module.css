@@ -1,0 +1,10 @@
+/* hide show sibling input field */
+:global(.govuk-checkboxes__item):has(input[type='checkbox'])
+  + :global(.govuk-checkboxes__conditional) {
+  display: none;
+}
+
+:global(.govuk-checkboxes__item):has(input[type='checkbox']:checked)
+  + :global(.govuk-checkboxes__conditional) {
+  display: block;
+}

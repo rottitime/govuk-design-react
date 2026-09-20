@@ -3,7 +3,7 @@ import Input from './Input'
 import { layout } from '@/const'
 
 const meta: Meta<typeof Input> = {
-  title: 'Atoms/Input',
+  title: 'Atoms/Form/Input',
   component: Input,
   parameters: {
     docs: {

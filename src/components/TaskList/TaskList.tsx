@@ -1,74 +1,82 @@
 // https://design-system.service.gov.uk/components/task-list/
 
-import type { ComponentProps, ReactNode } from 'react'
-
-import { insertIf } from '@/utils/array.utils'
+import Tag from '@/components/Tag/Tag'
+import { tagColors } from '@/const'
+import { cx } from '@/utils/string.utils'
+import { useId, type ComponentProps, type ReactNode } from 'react'
 
 type TaskStatus = {
   text: string
-  tagColour?: 'grey' | 'blue' | 'light-blue' | 'turquoise' | 'green' | 'purple' | 'pink' | 'red' | 'orange' | 'yellow'
+  tagColour?: keyof typeof tagColors
 }
 
-export type TaskItem = {
+type TaskItemBase = {
   title: ReactNode
-  href?: string
-  hint?: string
+  hint?: ReactNode
+  description?: ReactNode
   status: TaskStatus
 }
 
-type Props = {
+type TaskItemWithLink = TaskItemBase & {
+  href: string
+  id?: string
+}
+
+type TaskItemWithoutLink = TaskItemBase & {
+  id: string
+  href?: never
+}
+
+export type TaskItem = TaskItemWithLink | TaskItemWithoutLink
+
+export type TaskListProps = {
   items: TaskItem[]
 } & ComponentProps<'ul'>
 
-export default function TaskList({
-  items,
-  className,
-  ...props
-}: Props) {
+const normaliseIdPart = (value: string) => value.replace(/[^a-zA-Z0-9_-]+/g, '-')
+
+export default function TaskList({ items, className, ...props }: TaskListProps) {
+  const listId = useId()
+
   return (
-    <ul
-      className={[
-        'govuk-task-list',
-        ...insertIf(!!className, className)
-      ].join(' ')}
-      {...props}
-    >
-      {items.map((item, index) => {
-        const nameId = `task-list-${index}-name`
-        const statusId = `task-list-${index}-status`
-        const hintId = item.hint ? `task-list-${index}-hint` : undefined
+    <ul className={cx('govuk-task-list', className)} {...props}>
+      {items.map((item) => {
+        const itemKey = (item.id ?? item.href) as string
+        const itemId = `${listId}-${normaliseIdPart(itemKey)}`
+        const statusId = `${itemId}-status`
+        const hint = item.description ?? item.hint
+        const hintId = hint ? `${itemId}-hint` : undefined
+        const describedBy = cx(hintId, statusId)
 
         return (
-          <li key={index} className={[
+          <li
+            key={itemKey}
+            className={cx(
               'govuk-task-list__item',
-              ...insertIf(!!item.href, 'govuk-task-list__item--with-link')
-            ].join(' ')}>
+              item.href && 'govuk-task-list__item--with-link'
+            )}
+          >
             <div className="govuk-task-list__name-and-hint">
               {item.href ? (
                 <a
                   className="govuk-link govuk-task-list__link"
                   href={item.href}
-                  aria-describedby={[hintId, statusId].filter(Boolean).join(' ')}
+                  aria-describedby={describedBy}
                 >
                   {item.title}
                 </a>
               ) : (
-                <div id={nameId}>{item.title}</div>
+                <div>{item.title}</div>
               )}
-              {item.hint && (
+              {hint && (
                 <div id={hintId} className="govuk-task-list__hint">
-                  {item.hint}
+                  {hint}
                 </div>
               )}
             </div>
-            <div
-              className="govuk-task-list__status"
-              id={statusId}
-            >
+            <div className="govuk-task-list__status" id={statusId}>
               {item.status.tagColour ? (
-                <strong className={`govuk-tag govuk-tag--${item.status.tagColour}`}>
-                  {item.status.text}
-                </strong>
+                <Tag color={item.status.tagColour}>{item.status.text}</Tag>
               ) : (
                 item.status.text
               )}

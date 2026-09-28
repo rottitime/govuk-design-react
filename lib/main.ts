@@ -32,6 +32,7 @@ export { default as PasswordInput } from '@/components/PasswordInput/PasswordInp
 export { default as Panel } from '@/components/Panel/Panel'
 export { default as Tag } from '@/components/Tag/Tag'
 export { default as TaskList } from '@/components/TaskList/TaskList'
+export type { TaskListProps, TaskItem } from '@/components/TaskList/TaskList'
 export { default as Textarea } from '@/components/Textarea/Textarea'
 export { default as InsetText } from '@/components/InsetText/InsetText'
 export { default as WarningText } from '@/components/WarningText/WarningText'

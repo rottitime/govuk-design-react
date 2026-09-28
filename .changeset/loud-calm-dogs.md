@@ -2,4 +2,4 @@
 '@rottitime/govuk-design-react': minor
 ---
 
-Add CharacterCount component
+Upgrade `Textarea` with GOV.UK character count support

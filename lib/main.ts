@@ -8,7 +8,6 @@ export type {
   CheckboxesItem,
   CheckboxesOption
 } from '@/components/Checkboxes/types'
-export { default as CharacterCount } from '@/components/CharacterCount/CharacterCount'
 export { default as CssBaseline } from '@/components/CssBaseline/CssBaseline'
 export { default as Date } from '@/components/Date/Date'
 export { default as Details } from '@/components/Details/Details'
@@ -33,5 +32,6 @@ export { default as PasswordInput } from '@/components/PasswordInput/PasswordInp
 export { default as Panel } from '@/components/Panel/Panel'
 export { default as Tag } from '@/components/Tag/Tag'
 export { default as Textarea } from '@/components/Textarea/Textarea'
+export type { TextareaProps } from '@/components/Textarea/Textarea'
 export { default as InsetText } from '@/components/InsetText/InsetText'
 export { default as WarningText } from '@/components/WarningText/WarningText'

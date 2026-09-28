@@ -11,6 +11,11 @@ const meta: Meta<typeof Fieldset> = {
         component:
           'Use the fieldset component to group related form inputs. See https://design-system.service.gov.uk/components/fieldset/ for more details.'
       }
+    },
+    design: {
+      type: 'figma',
+      // TODO: Replace with the component node URL when the GOV.UK Design System Community Figma kit exposes a Fieldset node link.
+      url: 'https://www.figma.com/design/Uim7G5Td35hg5PTGQ79OA1/GOV.UK-Design-System--Community-?node-id=23-233&p=f&t=VUsK8fv9aRbXGOJv-0'
     }
   }
 }

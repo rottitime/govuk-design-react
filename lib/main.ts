@@ -1,3 +1,4 @@
+export { default as Accordion } from '@/components/Accordion/Accordion'
 export { default as Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs'
 export { default as Button } from '@/components/Button/Button'
 export { default as Caption } from '@/components/Caption/Caption'

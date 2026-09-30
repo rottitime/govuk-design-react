@@ -116,4 +116,4 @@ MIT — see [LICENSE](https://github.com/rottitime/govuk-design-react/blob/main/
 
 Questions or bugs? [Open an issue](https://github.com/rottitime/govuk-design-react/issues).
 
-This repository accepts pull requests from vegan-ai-bot.
+This repository accepts reviewed pull requests from vegan-ai-bot.

@@ -34,7 +34,13 @@ things:
 - Reuse the exact `govuk-*` class names and DOM structure from GOV.UK Frontend.
   When in doubt, mirror the HTML shown on the component's design-system page.
 - Reuse existing building blocks instead of duplicating markup: `Label`, `Hint`,
-  `ErrorMessage`, `FormGroup`, `Icon`, etc.
+  `ErrorMessage`, `FormGroup`, `Icon`, `Link`, etc.
+- Compose `Link` (`src/components/Link/Link.tsx`) for any component that renders
+  an anchor. Do not drop a raw `<a>` in new components (BackLink, SkipLink,
+  Breadcrumbs items, PhaseBanner body links, and similar). When the GOV.UK class
+  is not `govuk-link` (e.g. `govuk-back-link`, `govuk-skip-link`,
+  `govuk-breadcrumbs__link`), pass `unstyled` so `Link` does not also apply
+  `govuk-link`.
 - Generate ids with React's `useId()` when a component needs to wire
   `aria-describedby`/`htmlFor` and the consumer did not supply an `id`.
 - Prefer shared constants from `@/const` and `@/components/constants` (sizes,

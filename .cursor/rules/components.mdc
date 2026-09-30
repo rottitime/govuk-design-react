@@ -9,7 +9,8 @@ alwaysApply: false
 ## Composition and flexibility
 
 - Keep components easy to use and flexible. Do not hard-code copy, links, or other consumer content; pass it through props or `children`.
-- Reuse existing library components instead of raw HTML when a wrapper already exists. For example use `<P>` instead of `<p>`, not a new paragraph primitive.
+- Reuse existing library components instead of raw HTML when a wrapper already exists. For example use `<P>` instead of `<p>`, and `<Link>` (`src/components/Link/Link.tsx`) instead of a raw `<a>` (BackLink, SkipLink, Breadcrumbs items, and any other link-like component).
+- When the GOV.UK class is not `govuk-link` (for example `govuk-back-link`, `govuk-skip-link`, `govuk-breadcrumbs__link`), pass `unstyled` on `Link` so it does not also apply `govuk-link`.
 - If an existing component is almost right but not composable enough, upgrade it with a clean, backwards-compatible change rather than forking or duplicating it.
 
 ## Testing

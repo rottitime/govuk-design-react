@@ -34,4 +34,15 @@ describe('Link', () => {
     const customLinkElement = screen.getByTestId('custom-link')
     expect(customLinkElement).toHaveClass('custom-link')
   })
+
+  it('omits the default govuk-link class when unstyled is set', () => {
+    render(
+      <Link href="/previous" unstyled className="govuk-back-link">
+        Back
+      </Link>
+    )
+    const link = screen.getByRole('link', { name: 'Back' })
+    expect(link).toHaveClass('govuk-back-link')
+    expect(link).not.toHaveClass('govuk-link')
+  })
 })

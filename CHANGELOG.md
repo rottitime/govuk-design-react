@@ -1,5 +1,12 @@
 # @rottitime/govuk-design-react
 
+## 0.15.0
+
+### Minor Changes
+
+- fa07e11: Add `PasswordInput` component
+- 4916fed: Add `WarningText` component
+
 ## 0.14.6
 
 ### Patch Changes

@@ -115,3 +115,5 @@ MIT — see [LICENSE](https://github.com/rottitime/govuk-design-react/blob/main/
 - [Terms for non-GOV.UK sites](https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk)
 
 Questions or bugs? [Open an issue](https://github.com/rottitime/govuk-design-react/issues).
+
+This repository accepts pull requests from vegan-ai-bot.
